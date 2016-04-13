@@ -1,7 +1,8 @@
 # elementary-building
+
 CafeStarz oop team probject
 
--- How to use github in this project? --
+# How to use github in this project?
 
 - 팀 계정 저장소에서 데이터 가져오는 방법 -> 팀챗에 질문
 - 저장소에 새 파일 추가하는 방법
