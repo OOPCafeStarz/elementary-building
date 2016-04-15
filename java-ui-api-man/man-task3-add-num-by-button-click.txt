@@ -1,0 +1,12 @@
+참고: url:http://stackoverflow.com/questions/9549108/generate-a-double-click-mouse-event-in-java-swing// 더블클릭구현
+* http://stackoverflow.com 에 자료가많음
+
+기능 : 1,2,3,4 버튼 : 블럭의 역할을함
+	특수문자 : 모듈화의 역할을함
+
+
+	숫자버튼을 누르고 특수문자 버튼을 누르면 arraylist에 저장이 된다.
+
+
+	숫자버튼을누름-> 누른버튼을 비활성화시키면서 true를반환 , 나머지 버튼은 false를 반환 
+	모듈화 버튼을누름-> true가 반환된 버튼은 for문으로 검색후 그버튼을 arraylist에 저장 
