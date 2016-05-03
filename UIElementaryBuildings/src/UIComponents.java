@@ -42,11 +42,12 @@ public class UIComponents extends javax.swing.JDialog {
         uiInstructionQueue[6] = jLabel2;
         uiInstructionQueue[7] = jLabel1;
         
+        uiUserBoard = jTable1;
+        uiAnswerBoard = jTable2;
+        
         uiInstructionButtons[0].setText("■");
         uiInstructionButtons[1].setText("↓");
         for(int i=0;i<8;i++) uiInstructionQueue[i].setText(" ");
-        
-        
     }
 
     /**
@@ -126,9 +127,13 @@ public class UIComponents extends javax.swing.JDialog {
         jScrollPane1.setViewportView(jTable1);
         if (jTable1.getColumnModel().getColumnCount() > 0) {
             jTable1.getColumnModel().getColumn(0).setResizable(false);
+            jTable1.getColumnModel().getColumn(0).setHeaderValue("Title 1");
             jTable1.getColumnModel().getColumn(1).setResizable(false);
+            jTable1.getColumnModel().getColumn(1).setHeaderValue("Title 2");
             jTable1.getColumnModel().getColumn(2).setResizable(false);
+            jTable1.getColumnModel().getColumn(2).setHeaderValue("Title 3");
             jTable1.getColumnModel().getColumn(3).setResizable(false);
+            jTable1.getColumnModel().getColumn(3).setHeaderValue("Title 4");
         }
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
@@ -349,11 +354,7 @@ public class UIComponents extends javax.swing.JDialog {
     }
     
 
-    // Vaiables declaration - modifiable
-    private javax.swing.JButton[] uiInstructionButtons = new javax.swing.JButton[8];
-    private javax.swing.JLabel[] uiInstructionQueue = new javax.swing.JLabel[8];
-    private javax.swing.JButton uiPlayButton;
-    private javax.swing.JButton uiStopButton;
+    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -374,4 +375,12 @@ public class UIComponents extends javax.swing.JDialog {
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
+
+    // Vaiables declaration - modifiable
+    private javax.swing.JButton[] uiInstructionButtons = new javax.swing.JButton[8];
+    private javax.swing.JLabel[] uiInstructionQueue = new javax.swing.JLabel[8];
+    private javax.swing.JButton uiPlayButton;
+    private javax.swing.JButton uiStopButton;
+    private javax.swing.JTable uiUserBoard;
+    private javax.swing.JTable uiAnswerBoard;
 }
