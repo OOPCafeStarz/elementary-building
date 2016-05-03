@@ -5,6 +5,7 @@ public class Frame extends javax.swing.JDialog {
      * Creates new form Frame
      */
 	private int cnt = 0;
+	private char[] q = new char[]{' ',' ',' ',' ',' ',' ',' ',' '};
     public Frame(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -596,24 +597,35 @@ public class Frame extends javax.swing.JDialog {
         pack();
     }// </editor-fold>                        
 
-    private void jButton0ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+    private void jButton0ActionPerformed(java.awt.event.ActionEvent evt) {      
+    	if(cnt==8)
+    		return;
+    	q[cnt]='бс';
+        jLabel[7-cnt].setText(""+q[cnt]);
+        cnt++;
     }                                        
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {    
+    	if(cnt==0)
+    		return;
+        cnt--;
+        q[cnt]=' ';
+        jLabel[7-cnt].setText(""+q[cnt]);
     }                                        
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
     }                                        
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
     }                                        
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {  
+    	if(cnt==8)
+    		return;
+    	q[cnt]='бщ';
+        jLabel[7-cnt].setText(""+q[cnt]);
+        cnt++;
     }                                        
 
     /**
