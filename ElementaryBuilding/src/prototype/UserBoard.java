@@ -1,9 +1,9 @@
 package prototype;
 
 public class UserBoard {
-	private String[][] board = new String[Constants.USERBOARD_WIDTH][Constants.USERBOARD_HEIGHT];
-	private static final int width = Constants.USERBOARD_WIDTH;
-	private static final int height = Constants.USERBOARD_HEIGHT;
+	private String[][] board = new String[Constants.BOARD_HEIGHT][Constants.BOARD_WIDTH];
+	private static final int width = Constants.BOARD_WIDTH;
+	private static final int height = Constants.BOARD_HEIGHT;
 	int currentGrabPositionX = Constants.INIT_GRAB_POS_X;
 	int currentGrabPositionY = Constants.INIT_GRAB_POS_Y;
 	
@@ -18,8 +18,8 @@ public class UserBoard {
 	public UserBoard(){}
 	
 	public void clearAll(){
-		for(int i = 0;i<Constants.USERBOARD_HEIGHT;i++){
-			for(int j=0;j<Constants.USERBOARD_WIDTH;j++){
+		for(int i = 0;i<Constants.BOARD_HEIGHT;i++){
+			for(int j=0;j<Constants.BOARD_WIDTH;j++){
 				board[i][j] = " ";
 			}
 		}
@@ -52,8 +52,8 @@ public class UserBoard {
 	}
 	
 	private boolean inRange(int r, int c){
-		if(r < 0 || r >= Constants.USERBOARD_HEIGHT
-				|| c < 0 || c >= Constants.USERBOARD_WIDTH)
+		if(r < 0 || r >= Constants.BOARD_HEIGHT
+				|| c < 0 || c >= Constants.BOARD_WIDTH)
 			return false;
 		return true;
 	}
