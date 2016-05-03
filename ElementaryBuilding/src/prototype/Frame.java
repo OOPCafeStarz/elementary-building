@@ -1,3 +1,4 @@
+package prototype;
 import javax.swing.*;
 public class Frame extends javax.swing.JDialog {
 
