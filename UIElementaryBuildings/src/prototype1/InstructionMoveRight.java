@@ -10,5 +10,8 @@ package prototype1;
  * @author user
  */
 public class InstructionMoveRight extends Instruction{
-    
+    @Override
+    public void executeInstruction(){
+        
+    }
 }

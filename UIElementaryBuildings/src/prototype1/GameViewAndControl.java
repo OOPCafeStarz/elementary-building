@@ -353,11 +353,6 @@ public class GameViewAndControl extends javax.swing.JDialog {
 
     private void uiDeleteButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_uiDeleteButtonMouseClicked
         // TODO add your handling code here:
-        if(cnt==0)
-    		return;
-        cnt--;
-        q[cnt]=' ';
-        uiInstructionQueue[7-cnt].setText(""+q[cnt]);
     }//GEN-LAST:event_uiDeleteButtonMouseClicked
 
     private void uiPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uiPlayActionPerformed
