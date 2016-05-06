@@ -19,7 +19,24 @@ public class GameViewAndControl extends javax.swing.JDialog {
     private int rowcnt = 0;
     private int colcnt = 0;
 	private char[] q = new char[]{' ',' ',' ',' ',' ',' ',' ',' '};
-   
+   private GameViewAndControl()
+	{
+		
+	}
+	
+	private static GameViewAndControl GVC= new GameViewAndControl();
+	public static GameViewAndControl getInstance()
+	{
+		if(GVC==null)
+		{
+			GVC= new GameViewAndControl();
+			return GVC;
+		}
+		else
+		{
+			return GVC;
+		}
+	}
     public GameViewAndControl(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
