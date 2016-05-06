@@ -16,6 +16,8 @@ public class GameViewAndControl extends javax.swing.JDialog {
      * Creates new form UIComponents
      */
     private int cnt = 0;
+    private int rowcnt = 0;
+    private int colcnt = 0;
 	private char[] q = new char[]{' ',' ',' ',' ',' ',' ',' ',' '};
    
     public GameViewAndControl(java.awt.Frame parent, boolean modal) {
@@ -28,7 +30,7 @@ public class GameViewAndControl extends javax.swing.JDialog {
     * This method is called from within the constructor to initialize the form.
     */
     private void myInitComponents(){
-        uiPlayButton = jButton3;
+        uiPlayButton = uiPlay;
         uiStopButton = jButton4;
      
         uiInstructionButtons[0] = jButton1;
@@ -65,7 +67,7 @@ public class GameViewAndControl extends javax.swing.JDialog {
         jTable1 = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
-        jButton3 = new javax.swing.JButton();
+        uiPlay = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -83,6 +85,11 @@ public class GameViewAndControl extends javax.swing.JDialog {
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
+            }
+        });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -174,9 +181,19 @@ public class GameViewAndControl extends javax.swing.JDialog {
             jTable2.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        jButton3.setText("▶");
+        uiPlay.setText("▶");
+        uiPlay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                uiPlayActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("■");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("jLabel1");
 
@@ -224,7 +241,7 @@ public class GameViewAndControl extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(23, 23, 23)
-                        .addComponent(jButton3)
+                        .addComponent(uiPlay)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton4))
                     .addGroup(layout.createSequentialGroup()
@@ -262,7 +279,7 @@ public class GameViewAndControl extends javax.swing.JDialog {
                 .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4)
-                    .addComponent(jButton3))
+                    .addComponent(uiPlay))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
@@ -310,6 +327,36 @@ public class GameViewAndControl extends javax.swing.JDialog {
         q[cnt]=' ';
         uiInstructionQueue[7-cnt].setText(""+q[cnt]);
     }//GEN-LAST:event_jButton5MouseClicked
+
+    private void uiPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uiPlayActionPerformed
+       
+        for(int i=0; i<cnt; i++)
+        {
+            if(rowcnt >= 8)
+                return;
+            if(colcnt >= 4)
+                return;
+            if(q[i] == '↓')
+            {
+                colcnt++;
+                rowcnt = 0;
+            }
+            else
+            {
+                jTable1.setValueAt(q[i], 7-rowcnt, colcnt);
+                rowcnt++;
+            }
+            
+        }
+    }//GEN-LAST:event_uiPlayActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -363,7 +410,6 @@ public class GameViewAndControl extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
@@ -378,6 +424,7 @@ public class GameViewAndControl extends javax.swing.JDialog {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JButton uiPlay;
     // End of variables declaration//GEN-END:variables
 
     // Vaiables declaration - modifiable
