@@ -8,9 +8,9 @@ public class Judge {
         for(int i=0; i<UserBoard.USER_BOARD_ROW; i++){
             for(int j=0; j<UserBoard.USER_BOARD_COL; j++){
                 if(inputUserBoard[i][j].equals(inputAnswerBoard[i][j])){
-                    continue;
-                }else
+                }else{
                     return false;
+                }
             }
         }
         return true;
