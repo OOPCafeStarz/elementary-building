@@ -366,7 +366,14 @@ public class GameViewAndControl extends javax.swing.JDialog {
     }//GEN-LAST:event_uiPlayActionPerformed
 
     private void uiStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uiStopActionPerformed
-        // TODO add your handling code here:
+        
+        for(int i=0; i<8; i++)
+        {
+            for(int j=0; j<4; j++)
+            {
+                jTable1.setValueAt(" ",i, j);
+            }
+        }
       
     }//GEN-LAST:event_uiStopActionPerformed
 
