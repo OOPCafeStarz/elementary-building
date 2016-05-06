@@ -1,6 +1,6 @@
 public class Judge {
     public Judge() {}
-    public boolean mark(UserBoard ub, AnswerBoard ab){
+    public boolean mark(){
         return false;
     }
 }
