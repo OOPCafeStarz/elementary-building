@@ -50,7 +50,7 @@ public class Player {
             for(int j=0; i<UserBoard.USER_BOARD_COL; j++)
             {
                 if(UserBoard.getInstance().getBoard()[i][j].equals("■"))
-                    GameViewAndControl.getInstance().getjTable1().setValueAt("■", i, j);
+                    GameViewAndControl.getInstance().getjTable1().setValueAt(UserBoard.getInstance().getBoard()[i][j], i, j);
             }
         }
 
