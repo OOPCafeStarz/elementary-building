@@ -15,6 +15,12 @@ public class AnswerBoard {
     
     private String[][] board = new String[ANSWER_BOARD_ROW][ANSWER_BOARD_COL];
 
+    
+    private static AnswerBoard answerBoard = new AnswerBoard();
+    private AnswerBoard(){}
+    public static AnswerBoard getInstance(){
+        return answerBoard;
+    }
     public String[][] getBoard() {
         return board;
     }
