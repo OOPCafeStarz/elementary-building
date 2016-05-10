@@ -19,21 +19,17 @@ public static Player getInstance()
 }
 
 public void delete()
-{	for(int i=0;i<8;i++)
+{	
+        String[][] board = new String[8][4];
+    for(int i=0;i<8;i++)
 	{
 		for(int j=0;j<4;j++)
 		{
-			UserBoard.getInstance().getBoard()[i][j]=" ";
+			board[i][j]=" ";
 		}
 	}
-
-for(int i=0;i<8;i++)
-{
-	for(int j=0;j<4;j++)
-	{
-		GameViewAndControl.getInstance().getjTable1().setValueAt(UserBoard.getInstance().getBoard()[i][j], i, j);
-	}
-}
+    
+       UserBoard.getInstance().setBoard(board);
 	
 }
 }
