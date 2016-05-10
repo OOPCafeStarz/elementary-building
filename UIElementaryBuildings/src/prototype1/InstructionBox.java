@@ -11,6 +11,8 @@ package prototype1;
  */
 public class InstructionBox extends Instruction{
     
-  
+  public void executeInstruction(){
+      
+  }
     
 }
