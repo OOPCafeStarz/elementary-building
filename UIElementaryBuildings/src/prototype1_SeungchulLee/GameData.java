@@ -21,6 +21,14 @@ public class GameData {
             primitiveModules[i] = new PrimitiveModule();
         
         currentContainerModule = 0;
+        currentGameState = GAME_STATE_STOP;
+    }
+    
+    public void runCurrentContainerModule(){
+        containerModules[currentContainerModule].execute();
+    }
+    
+    public void stop(){
         
     }
     
@@ -28,12 +36,18 @@ public class GameData {
         containerModules[currentContainerModule].enqueueIntoExecutableQueue(m);
     }
     
-    public GameData getInstance(){
+    public static GameData getInstance(){
         if(gameData == null)
             gameData = new GameData();
         
         return gameData;
     }
+
+    public int getCurrentGameState() {
+        return currentGameState;
+    }
+    
+    
     
     
     private static GameData gameData;
@@ -41,6 +55,10 @@ public class GameData {
     private final PrimitiveModule[] primitiveModules;
     private int currentContainerModule;
 
-    private static final int NUM_OF_CONTAINER_MODULES = 4;
-    private static final int NUM_OF_PRIMITIVE_MODULES = 4;
+    private int currentGameState;
+    
+    public static final int NUM_OF_CONTAINER_MODULES = 4;
+    public static final int NUM_OF_PRIMITIVE_MODULES = 4;
+    public static final int GAME_STATE_RUNNING = 0;
+    public static final int GAME_STATE_STOP = 1;
 }

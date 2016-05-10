@@ -30,8 +30,11 @@ public class ContainerModule extends Module{
     
     @Override
     public void execute(){
-        for(int i=0;i<queueRear;i++)
+        for(int i=0;i<queueRear;i++){
+            if(GameData.getInstance().getCurrentGameState() == GameData.GAME_STATE_STOP) return;
+            
             executableQueue[i].execute();
+        }
     }
     
     private Module[] executableQueue;
