@@ -27,6 +27,16 @@ public class UserBoard {
     public static final int USER_BOARD_COL = 4;
 
     private String[][] board = new String[USER_BOARD_ROW][USER_BOARD_COL];
+    
+    public void initialBoard() {
+        for(int i=0; i<USER_BOARD_ROW; i++)
+        {
+            for(int j=0; j<USER_BOARD_COL; j++)
+            {
+                board[i][j] = " ";
+            }
+        }
+    }
 
     public int getRowcnt() {
         return rowcnt;
@@ -42,6 +52,10 @@ public class UserBoard {
 
     public void setColcnt(int colcnt) {
         this.colcnt = colcnt;
+    }
+
+    public void setBoard(String[][] board) {
+        this.board = board;
     }
    
     public String[][] getBoard() {
