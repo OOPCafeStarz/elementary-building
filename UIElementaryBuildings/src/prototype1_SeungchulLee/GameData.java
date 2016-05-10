@@ -20,6 +20,9 @@ public class GameData {
         for(int i=0;i<NUM_OF_PRIMITIVE_MODULES;i++)
             primitiveModules[i] = new PrimitiveModule();
         
+        // init user board
+        userBoard = new UserBoard();
+        
         currentContainerModule = 0;
         currentGameState = GAME_STATE_STOP;
     }
@@ -29,7 +32,7 @@ public class GameData {
     }
     
     public void stop(){
-        
+        currentGameState = GAME_STATE_STOP;
     }
     
     public void enqueueIntoCurrentModule(Module m){
@@ -51,10 +54,11 @@ public class GameData {
     
     
     private static GameData gameData;
-    private final ContainerModule[] containerModules;
-    private final PrimitiveModule[] primitiveModules;
+    private ContainerModule[] containerModules;
+    private PrimitiveModule[] primitiveModules;
     private int currentContainerModule;
-
+    private UserBoard userBoard;
+    
     private int currentGameState;
     
     public static final int NUM_OF_CONTAINER_MODULES = 4;

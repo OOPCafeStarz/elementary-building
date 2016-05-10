@@ -5,6 +5,9 @@
  */
 package prototype1_SeungchulLee;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author user
@@ -32,6 +35,12 @@ public class ContainerModule extends Module{
     public void execute(){
         for(int i=0;i<queueRear;i++){
             if(GameData.getInstance().getCurrentGameState() == GameData.GAME_STATE_STOP) return;
+            
+            try {
+                Thread.sleep(4000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(ContainerModule.class.getName()).log(Level.SEVERE, null, ex);
+            }
             
             executableQueue[i].execute();
         }
