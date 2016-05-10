@@ -26,7 +26,9 @@ public class Player {
     }
 
     public void BlockPut() {
-
+        
+         UserBoard.getInstance().initialBoard();
+        
         for (int i = 0; i < MinQueue.getInstance().getIndex(); i++) {
             if (UserBoard.getInstance().getRowcnt() >= 8) {
                 return;
@@ -44,10 +46,12 @@ public class Player {
                 getRow++;
             }
         }
+       
+       
         
         for(int i=0; i<UserBoard.USER_BOARD_ROW; i++)
         {
-            for(int j=0; i<UserBoard.USER_BOARD_COL; j++)
+            for(int j=0; j<UserBoard.USER_BOARD_COL; j++)
             {
                 if(UserBoard.getInstance().getBoard()[i][j].equals("■"))
                     GameViewAndControl.getInstance().getjTable1().setValueAt(UserBoard.getInstance().getBoard()[i][j], i, j);

@@ -1,25 +1,9 @@
-package prototype1_YongJaeLee;
+package prototype1_MinGyu;
+import javax.swing.*;
 
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import prototype1.*;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author user
- */
 public class GameViewAndControl extends javax.swing.JDialog {
 
-
-    /**
-     * Creates new form UIComponents
-     */
+    
     private int cnt = 0;
     private int rowcnt = 0;
     private int colcnt = 0;
@@ -30,17 +14,8 @@ public class GameViewAndControl extends javax.swing.JDialog {
 	}
 	
 	private static  GameViewAndControl dialog = new GameViewAndControl(new javax.swing.JFrame(), true);
-	public static GameViewAndControl getInstance()
-	{
-		if(dialog==null)
-		{
-			dialog= new GameViewAndControl();
-			return dialog;
-		}
-		else
-		{
-			return dialog;
-		}
+	public static GameViewAndControl getInstance(){
+		return dialog;
 	}
     public GameViewAndControl(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -57,6 +32,8 @@ public class GameViewAndControl extends javax.swing.JDialog {
      
         uiInstructionButtons[0] = uiBoxButton;
         uiInstructionButtons[1] = uiPutButton;
+        uiInstructionButtons[2] = uiDeleteButton;
+        uiInstructionButtons[3] = uiStarButton;
         
         uiInstructionQueue[0] = jLabel8;
         uiInstructionQueue[1] = jLabel7;
@@ -67,9 +44,10 @@ public class GameViewAndControl extends javax.swing.JDialog {
         uiInstructionQueue[6] = jLabel2;
         uiInstructionQueue[7] = jLabel1;
         
+        uiUserBoard = jTable1;
         uiAnswerBoard = jTable2;
         uiInstructionButtons[0].setText("■");
-        uiInstructionButtons[1].setText("↓");
+        uiInstructionButtons[1].setText("→");
         for(int i=0;i<8;i++) uiInstructionQueue[i].setText(" ");
     }
 
@@ -99,7 +77,7 @@ public class GameViewAndControl extends javax.swing.JDialog {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         uiDeleteButton = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        uiStarButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -120,7 +98,7 @@ public class GameViewAndControl extends javax.swing.JDialog {
             }
         });
 
-        uiPutButton.setText("↓");
+        uiPutButton.setText("→");
         uiPutButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 uiPutButtonMouseClicked(evt);
@@ -260,10 +238,15 @@ public class GameViewAndControl extends javax.swing.JDialog {
             }
         });
 
-        jButton2.setText("jButton2");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        uiStarButton.setText("★");
+        uiStarButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                uiStarButtonMouseClicked(evt);
+            }
+        });
+        uiStarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                uiStarButtonActionPerformed(evt);
             }
         });
 
@@ -281,8 +264,15 @@ public class GameViewAndControl extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(uiPutButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(uiDeleteButton)))
+                        .addComponent(uiDeleteButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(uiStarButton)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(uiPlay)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(uiStop))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(54, 54, 54)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -293,15 +283,7 @@ public class GameViewAndControl extends javax.swing.JDialog {
                             .addComponent(jLabel5)
                             .addComponent(jLabel6)
                             .addComponent(jLabel7)
-                            .addComponent(jLabel8)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(uiPlay)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(uiStop)))))
+                            .addComponent(jLabel8))))
                 .addContainerGap(114, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -327,15 +309,14 @@ public class GameViewAndControl extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(uiStop)
                     .addComponent(uiPlay))
-                .addGap(115, 115, 115)
-                .addComponent(jButton2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(uiBoxButton)
                     .addComponent(uiPutButton)
-                    .addComponent(uiDeleteButton))
+                    .addComponent(uiDeleteButton)
+                    .addComponent(uiStarButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -352,64 +333,63 @@ public class GameViewAndControl extends javax.swing.JDialog {
 
     private void uiBoxButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_uiBoxButtonMouseClicked
         // TODO add your handling code here:
-        MinQueue.getInstance().inputQueue(MinQueue.getInstance().getIndex(), "■");
-//         if(cnt==8)
-//    		return;
-//    	q[cnt]='■';
-//        uiInstructionQueue[7-cnt].setText(""+q[cnt]);
-//        cnt++;
+         if(MinQueue.getInstance().getIndex()==8)
+    		return;
+        MinQueue.getInstance().inputQueue("■");
+        uiInstructionQueue[7-(MinQueue.getInstance().getIndex()-1)].setText(""+MinQueue.getInstance().getQueue()[MinQueue.getInstance().getIndex()-1]);
     }//GEN-LAST:event_uiBoxButtonMouseClicked
 
     private void uiPutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_uiPutButtonMouseClicked
         // TODO add your handling code here:
-        if(cnt==8)
+       if(MinQueue.getInstance().getIndex()==8)
     		return;
-    	q[cnt]='↓';
-        uiInstructionQueue[7-cnt].setText(""+q[cnt]);
-        cnt++;
+        MinQueue.getInstance().inputQueue("→");
+        uiInstructionQueue[7-(MinQueue.getInstance().getIndex()-1)].setText(""+MinQueue.getInstance().getQueue()[MinQueue.getInstance().getIndex()-1]);
     }//GEN-LAST:event_uiPutButtonMouseClicked
 
     private void uiDeleteButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_uiDeleteButtonMouseClicked
-        // TODO add your handling code here:
+        if(MinQueue.getInstance().getIndex()==0)
+            return;
+        MinQueue.getInstance().deleteQueue();
+        uiInstructionQueue[7-(MinQueue.getInstance().getIndex())].setText(""+MinQueue.getInstance().getQueue()[MinQueue.getInstance().getIndex()]);
     }//GEN-LAST:event_uiDeleteButtonMouseClicked
 
     private void uiPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uiPlayActionPerformed
        
-        Player.getinstance().BlockPut();
-        
-//        for(int i=0; i<cnt; i++)
-//        {
-//            if(rowcnt >= 8)
-//                return;
-//            if(colcnt >= 4)
-//                return;
-//            if(q[i] == '↓')
-//            {
-//                colcnt++;
-//                rowcnt = 0;
-//            }
-//            else
-//            {
-//                jTable1.setValueAt(q[i], 7-rowcnt, colcnt);
-//                rowcnt++;
-//            }
-//        }
+        for(int i=0; i<MinQueue.getInstance().getIndex(); i++)
+        {
+            if(rowcnt >= 8)
+                return;
+            if(colcnt >= 4)
+                return;
+            if(MinQueue.getInstance().getQueue()[i].equals("→"))
+            {
+                colcnt++;
+                rowcnt = 0;
+            }
+            else
+            {
+                jTable1.setValueAt(MinQueue.getInstance().getQueue()[i], 7-rowcnt, colcnt);
+                rowcnt++;
+            }
+            
+        }
     }//GEN-LAST:event_uiPlayActionPerformed
 
     private void uiStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uiStopActionPerformed
         
-//        for(int i=0; i<8; i++)
-//        {
-//            for(int j=0; j<4; j++)
-//            {
-//                getjTable1().setValueAt(" ",i, j);
-//            }
-//        }
+        for(int i=0; i<8; i++)
+        {
+            for(int j=0; j<4; j++)
+            {
+                jTable1.setValueAt(" ",i, j);
+            }
+        }
       
     }//GEN-LAST:event_uiStopActionPerformed
 
     private void uiBoxButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uiBoxButtonActionPerformed
-  
+        // TODO add your handling code here:
     }//GEN-LAST:event_uiBoxButtonActionPerformed
 
     private void uiPutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uiPutButtonActionPerformed
@@ -424,13 +404,17 @@ public class GameViewAndControl extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_uiBoxButtonKeyPressed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void uiStarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uiStarButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_uiStarButtonActionPerformed
 
-    public JButton getjButton2() {
-        return jButton2;
-    }
+    private void uiStarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_uiStarButtonMouseClicked
+        // TODO add your handling code here:
+         if(MinQueue.getInstance().getIndex()==8)
+    		return;
+        MinQueue.getInstance().inputQueue("★");
+        uiInstructionQueue[7-(MinQueue.getInstance().getIndex()-1)].setText(""+MinQueue.getInstance().getQueue()[MinQueue.getInstance().getIndex()-1]);
+    }//GEN-LAST:event_uiStarButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -461,13 +445,11 @@ public class GameViewAndControl extends javax.swing.JDialog {
         }
         //</editor-fold>
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-               
+              
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     
                     @Override
@@ -484,7 +466,6 @@ public class GameViewAndControl extends javax.swing.JDialog {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -501,6 +482,7 @@ public class GameViewAndControl extends javax.swing.JDialog {
     private javax.swing.JButton uiDeleteButton;
     private javax.swing.JButton uiPlay;
     private javax.swing.JButton uiPutButton;
+    private javax.swing.JButton uiStarButton;
     private javax.swing.JButton uiStop;
     // End of variables declaration//GEN-END:variables
 
@@ -511,20 +493,4 @@ public class GameViewAndControl extends javax.swing.JDialog {
     private javax.swing.JButton uiStopButton;
     private javax.swing.JTable uiUserBoard;
     private javax.swing.JTable uiAnswerBoard;
-
-    /**
-     * @return the jTable1
-     */
-    public javax.swing.JTable getjTable1() {
-        return jTable1;
-    }
-
-    /**
-     * @param jTable1 the jTable1 to set
-     */
-    public void setjTable1(javax.swing.JTable jTable1) {
-        this.jTable1 = jTable1;
-    }
-
- 
 }
