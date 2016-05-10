@@ -14,11 +14,13 @@ public class UserBoard {
     public static final int USER_BOARD_COL = 4;
     
     private String[][] board = new String[USER_BOARD_ROW][USER_BOARD_COL];
-    
-    public UserBoard(){
+    private static UserBoard userBoard = new UserBoard();
+    private UserBoard(){
         
     }
-
+    public static UserBoard getInstance(){
+        return userBoard;
+    }
     public String[][] getBoard() {
         return board;
     }
