@@ -18,23 +18,23 @@ public class GameUIModifier {
         // init queue of current module
     }
     
-    public static void setPrimitiveModuleIconInUserBoard(int x, int y, String icon){
+    public static void setIconInUserBoard(int x, int y, String icon){
         
     }
     
-    public static void setPrimitiveModuleIconInUserBoard(String[][] icons){
+    public static void setIconInUserBoard(String[][] icons){
         
     }
     
-    public static void setPrimitiveModuleIconInAnswerBoard(String[][] icons){
+    public static void setIconInAnswerBoard(String[][] icons){
         
     }
     
-    public static void setModuleIconInQueue(int queueIndex, String icon){
+    public static void setIconInQueue(int queueIndex, String icon){
         
     }
     
-    public static void setModuleIconInqueue(String[] icons){
+    public static void setIconInqueue(String[] icons){
         
     }
     

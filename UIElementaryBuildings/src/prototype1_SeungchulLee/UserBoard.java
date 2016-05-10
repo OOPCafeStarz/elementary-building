@@ -19,6 +19,30 @@ public class UserBoard {
         }
     }
     
+    public void setIconInUserBoard(int r, int c, String icon){
+        if(!rangeCheck(r, c)){
+            // TODO: out of bound exception
+            return;
+        }
+        
+        boardIcons[r][c] = icon;
+        GameUIModifier.setIconInUserBoard(r, c, icon);
+    }
+    
+    public void setIconInUserBoard(String[][] icons){
+        
+    }
+    
+    boolean rangeCheck(int r, int c){
+        if(r < 0 || r >= NUM_OF_ROWS ||
+                c < 0 || c >= NUM_OF_COLUMNS) return false;
+        return true;
+    }
+    
+    public String[][] getBoardIcons(){
+        return boardIcons.clone();
+    }
+    
     private String[][] boardIcons;
 
     public static final int NUM_OF_ROWS = 4;
