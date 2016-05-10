@@ -49,6 +49,8 @@ public class GameViewAndControl extends javax.swing.JDialog {
         uiInstructionButtons[0].setText("■");
         uiInstructionButtons[1].setText("→");
         for(int i=0;i<8;i++) uiInstructionQueue[i].setText(" ");
+        
+        uiJudgeText = jTextPane1;
     }
 
     /**
@@ -78,6 +80,8 @@ public class GameViewAndControl extends javax.swing.JDialog {
         jLabel8 = new javax.swing.JLabel();
         uiDeleteButton = new javax.swing.JButton();
         uiStarButton = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -250,6 +254,8 @@ public class GameViewAndControl extends javax.swing.JDialog {
             }
         });
 
+        jScrollPane4.setViewportView(jTextPane1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -269,11 +275,6 @@ public class GameViewAndControl extends javax.swing.JDialog {
                         .addComponent(uiStarButton)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(uiPlay)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(uiStop))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(54, 54, 54)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
@@ -283,8 +284,16 @@ public class GameViewAndControl extends javax.swing.JDialog {
                             .addComponent(jLabel5)
                             .addComponent(jLabel6)
                             .addComponent(jLabel7)
-                            .addComponent(jLabel8))))
-                .addContainerGap(114, Short.MAX_VALUE))
+                            .addComponent(jLabel8)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(uiPlay)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(uiStop)))))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -309,9 +318,11 @@ public class GameViewAndControl extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(uiStop)
                     .addComponent(uiPlay))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(uiBoxButton)
                     .addComponent(uiPutButton)
@@ -476,8 +487,10 @@ public class GameViewAndControl extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTextPane jTextPane1;
     private javax.swing.JButton uiBoxButton;
     private javax.swing.JButton uiDeleteButton;
     private javax.swing.JButton uiPlay;
@@ -493,4 +506,5 @@ public class GameViewAndControl extends javax.swing.JDialog {
     private javax.swing.JButton uiStopButton;
     private javax.swing.JTable uiUserBoard;
     private javax.swing.JTable uiAnswerBoard;
+    private javax.swing.JTextPane uiJudgeText;
 }
