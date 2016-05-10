@@ -409,7 +409,7 @@ public class GameViewAndControl extends javax.swing.JDialog {
     }//GEN-LAST:event_uiStopActionPerformed
 
     private void uiBoxButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uiBoxButtonActionPerformed
-        // TODO add your handling code here:
+  
     }//GEN-LAST:event_uiBoxButtonActionPerformed
 
     private void uiPutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uiPutButtonActionPerformed
