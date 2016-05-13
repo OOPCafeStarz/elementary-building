@@ -1,3 +1,5 @@
+package prototype1;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,18 +10,36 @@
  *
  * @author user
  */
-public class UIComponents extends javax.swing.JDialog {
+public class GameViewAndControl extends javax.swing.JDialog {
 
     /**
      * Creates new form UIComponents
      */
     private int cnt = 0;
+    private int rowcnt = 0;
+    private int colcnt = 0;
 	private char[] q = new char[]{' ',' ',' ',' ',' ',' ',' ',' '};
-   
-    public UIComponents(java.awt.Frame parent, boolean modal) {
+   private GameViewAndControl()
+	{
+		
+	}
+	
+	private static GameViewAndControl GVC= new GameViewAndControl();
+	public static GameViewAndControl getInstance()
+	{
+		if(GVC==null)
+		{
+			GVC= new GameViewAndControl();
+			return GVC;
+		}
+		else
+		{
+			return GVC;
+		}
+	}
+    public GameViewAndControl(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        
         myInitComponents();
     }
     
@@ -27,11 +47,11 @@ public class UIComponents extends javax.swing.JDialog {
     * This method is called from within the constructor to initialize the form.
     */
     private void myInitComponents(){
-        uiPlayButton = jButton3;
-        uiStopButton = jButton4;
+        uiPlayButton = uiPlay;
+        uiStopButton = uiStop;
      
-        uiInstructionButtons[0] = jButton1;
-        uiInstructionButtons[1] = jButton2;
+        uiInstructionButtons[0] = uiBoxButton;
+        uiInstructionButtons[1] = uiPutButton;
         
         uiInstructionQueue[0] = jLabel8;
         uiInstructionQueue[1] = jLabel7;
@@ -42,11 +62,11 @@ public class UIComponents extends javax.swing.JDialog {
         uiInstructionQueue[6] = jLabel2;
         uiInstructionQueue[7] = jLabel1;
         
+        uiUserBoard = jTable1;
+        uiAnswerBoard = jTable2;
         uiInstructionButtons[0].setText("■");
         uiInstructionButtons[1].setText("↓");
         for(int i=0;i<8;i++) uiInstructionQueue[i].setText(" ");
-        
-        
     }
 
     /**
@@ -58,14 +78,14 @@ public class UIComponents extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        uiBoxButton = new javax.swing.JButton();
+        uiPutButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        uiPlay = new javax.swing.JButton();
+        uiStop = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -74,21 +94,36 @@ public class UIComponents extends javax.swing.JDialog {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        uiDeleteButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jButton1.setText("■");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        uiBoxButton.setText("■");
+        uiBoxButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                uiBoxButtonMouseClicked(evt);
+            }
+        });
+        uiBoxButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                uiBoxButtonActionPerformed(evt);
+            }
+        });
+        uiBoxButton.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                uiBoxButtonKeyPressed(evt);
             }
         });
 
-        jButton2.setText("↓");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        uiPutButton.setText("↓");
+        uiPutButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                uiPutButtonMouseClicked(evt);
+            }
+        });
+        uiPutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                uiPutButtonActionPerformed(evt);
             }
         });
 
@@ -126,9 +161,13 @@ public class UIComponents extends javax.swing.JDialog {
         jScrollPane1.setViewportView(jTable1);
         if (jTable1.getColumnModel().getColumnCount() > 0) {
             jTable1.getColumnModel().getColumn(0).setResizable(false);
+            jTable1.getColumnModel().getColumn(0).setHeaderValue("Title 1");
             jTable1.getColumnModel().getColumn(1).setResizable(false);
+            jTable1.getColumnModel().getColumn(1).setHeaderValue("Title 2");
             jTable1.getColumnModel().getColumn(2).setResizable(false);
+            jTable1.getColumnModel().getColumn(2).setHeaderValue("Title 3");
             jTable1.getColumnModel().getColumn(3).setResizable(false);
+            jTable1.getColumnModel().getColumn(3).setHeaderValue("Title 4");
         }
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
@@ -169,9 +208,24 @@ public class UIComponents extends javax.swing.JDialog {
             jTable2.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        jButton3.setText("▶");
+        uiPlay.setText("▶");
+        uiPlay.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                uiPlayMouseClicked(evt);
+            }
+        });
+        uiPlay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                uiPlayActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("■");
+        uiStop.setText("■");
+        uiStop.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                uiStopActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("jLabel1");
 
@@ -189,15 +243,15 @@ public class UIComponents extends javax.swing.JDialog {
 
         jLabel8.setText("jLabel8");
 
-        jButton5.setText("DEL");
-        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+        uiDeleteButton.setText("DEL");
+        uiDeleteButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton5MouseClicked(evt);
+                uiDeleteButtonMouseClicked(evt);
             }
         });
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        uiDeleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                uiDeleteButtonActionPerformed(evt);
             }
         });
 
@@ -211,19 +265,19 @@ public class UIComponents extends javax.swing.JDialog {
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(uiBoxButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
+                        .addComponent(uiPutButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton5)))
+                        .addComponent(uiDeleteButton)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4))
+                        .addGap(23, 23, 23)
+                        .addComponent(uiPlay)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(uiStop))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
+                        .addGap(54, 54, 54)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel1)
@@ -233,90 +287,136 @@ public class UIComponents extends javax.swing.JDialog {
                             .addComponent(jLabel6)
                             .addComponent(jLabel7)
                             .addComponent(jLabel8))))
-                .addContainerGap(124, Short.MAX_VALUE))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2)
-                            .addComponent(jButton5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1)
-                        .addGap(35, 35, 35)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton3)
-                            .addComponent(jButton4))))
-                .addContainerGap(281, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(83, 83, 83)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addGap(38, 38, 38)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(uiStop)
+                    .addComponent(uiPlay))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(uiBoxButton)
+                    .addComponent(uiPutButton)
+                    .addComponent(uiDeleteButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(265, 265, 265))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void uiDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uiDeleteButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_uiDeleteButtonActionPerformed
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void uiBoxButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_uiBoxButtonMouseClicked
         // TODO add your handling code here:
          if(cnt==8)
     		return;
     	q[cnt]='■';
         uiInstructionQueue[7-cnt].setText(""+q[cnt]);
         cnt++;
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_uiBoxButtonMouseClicked
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void uiPutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_uiPutButtonMouseClicked
         // TODO add your handling code here:
         if(cnt==8)
     		return;
     	q[cnt]='↓';
         uiInstructionQueue[7-cnt].setText(""+q[cnt]);
         cnt++;
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_uiPutButtonMouseClicked
 
-    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+    private void uiDeleteButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_uiDeleteButtonMouseClicked
         // TODO add your handling code here:
-        if(cnt==0)
-    		return;
-        cnt--;
-        q[cnt]=' ';
-        uiInstructionQueue[7-cnt].setText(""+q[cnt]);
-    }//GEN-LAST:event_jButton5MouseClicked
+    }//GEN-LAST:event_uiDeleteButtonMouseClicked
+
+    private void uiPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uiPlayActionPerformed
+       
+        for(int i=0; i<cnt; i++)
+        {
+            if(rowcnt >= 8)
+                return;
+            if(colcnt >= 4)
+                return;
+            if(q[i] == '↓')
+            {
+                colcnt++;
+                rowcnt = 0;
+            }
+            else
+            {
+                jTable1.setValueAt(q[i], 7-rowcnt, colcnt);
+                rowcnt++;
+            }
+            
+        }
+    }//GEN-LAST:event_uiPlayActionPerformed
+
+    private void uiStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uiStopActionPerformed
+        
+        for(int i=0; i<8; i++)
+        {
+            for(int j=0; j<4; j++)
+            {
+                jTable1.setValueAt(" ",i, j);
+            }
+        }
+      
+    }//GEN-LAST:event_uiStopActionPerformed
+
+    private void uiBoxButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uiBoxButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_uiBoxButtonActionPerformed
+
+    private void uiPutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uiPutButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_uiPutButtonActionPerformed
+
+    private void uiPlayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_uiPlayMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_uiPlayMouseClicked
+
+    private void uiBoxButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_uiBoxButtonKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_uiBoxButtonKeyPressed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+         
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
+            
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -324,21 +424,23 @@ public class UIComponents extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UIComponents.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GameViewAndControl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UIComponents.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GameViewAndControl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UIComponents.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GameViewAndControl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UIComponents.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GameViewAndControl.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                UIComponents dialog = new UIComponents(new javax.swing.JFrame(), true);
+                GameViewAndControl dialog = new GameViewAndControl(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
                         System.exit(0);
@@ -350,18 +452,9 @@ public class UIComponents extends javax.swing.JDialog {
     }
     
 
-    // Vaiables declaration - modifiable
-    private javax.swing.JButton[] uiInstructionButtons = new javax.swing.JButton[8];
-    private javax.swing.JLabel[] uiInstructionQueue = new javax.swing.JLabel[8];
-    private javax.swing.JButton uiPlayButton;
-    private javax.swing.JButton uiStopButton;
+    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -374,5 +467,18 @@ public class UIComponents extends javax.swing.JDialog {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JButton uiBoxButton;
+    private javax.swing.JButton uiDeleteButton;
+    private javax.swing.JButton uiPlay;
+    private javax.swing.JButton uiPutButton;
+    private javax.swing.JButton uiStop;
     // End of variables declaration//GEN-END:variables
+
+    // Vaiables declaration - modifiable
+    private javax.swing.JButton[] uiInstructionButtons = new javax.swing.JButton[8];
+    private javax.swing.JLabel[] uiInstructionQueue = new javax.swing.JLabel[8];
+    private javax.swing.JButton uiPlayButton;
+    private javax.swing.JButton uiStopButton;
+    private javax.swing.JTable uiUserBoard;
+    private javax.swing.JTable uiAnswerBoard;
 }
