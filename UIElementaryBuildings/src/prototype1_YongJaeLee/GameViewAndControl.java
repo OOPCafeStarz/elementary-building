@@ -69,7 +69,7 @@ public class GameViewAndControl extends javax.swing.JDialog {
         
         uiAnswerBoard = jTable2;
         uiInstructionButtons[0].setText("■");
-        uiInstructionButtons[1].setText("↓");
+        uiInstructionButtons[1].setText("→");
         for(int i=0;i<8;i++) uiInstructionQueue[i].setText(" ");
     }
 
@@ -353,58 +353,30 @@ public class GameViewAndControl extends javax.swing.JDialog {
     private void uiBoxButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_uiBoxButtonMouseClicked
         // TODO add your handling code here:
         MinQueue.getInstance().inputQueue(MinQueue.getInstance().getIndex(), "■");
-//         if(cnt==8)
-//    		return;
-//    	q[cnt]='■';
-//        uiInstructionQueue[7-cnt].setText(""+q[cnt]);
-//        cnt++;
+        uiInstructionQueue[7-(MinQueue.getInstance().getIndex()-1)].setText(""+MinQueue.getInstance().getQueue()[MinQueue.getInstance().getIndex()-1]);
     }//GEN-LAST:event_uiBoxButtonMouseClicked
 
     private void uiPutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_uiPutButtonMouseClicked
         // TODO add your handling code here:
-        if(cnt==8)
-    		return;
-    	q[cnt]='↓';
-        uiInstructionQueue[7-cnt].setText(""+q[cnt]);
-        cnt++;
+        MinQueue.getInstance().inputQueue(MinQueue.getInstance().getIndex(), "→");
+         uiInstructionQueue[7-(MinQueue.getInstance().getIndex()-1)].setText(""+MinQueue.getInstance().getQueue()[MinQueue.getInstance().getIndex()-1]);
     }//GEN-LAST:event_uiPutButtonMouseClicked
 
     private void uiDeleteButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_uiDeleteButtonMouseClicked
         // TODO add your handling code here:
+        MinQueue.getInstance().deleteQueue();
+         uiInstructionQueue[7-(MinQueue.getInstance().getIndex())].setText(""+MinQueue.getInstance().getQueue()[MinQueue.getInstance().getIndex()]);
     }//GEN-LAST:event_uiDeleteButtonMouseClicked
 
     private void uiPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uiPlayActionPerformed
        
         Player.getinstance().BlockPut();
         
-//        for(int i=0; i<cnt; i++)
-//        {
-//            if(rowcnt >= 8)
-//                return;
-//            if(colcnt >= 4)
-//                return;
-//            if(q[i] == '↓')
-//            {
-//                colcnt++;
-//                rowcnt = 0;
-//            }
-//            else
-//            {
-//                jTable1.setValueAt(q[i], 7-rowcnt, colcnt);
-//                rowcnt++;
-//            }
-//        }
     }//GEN-LAST:event_uiPlayActionPerformed
 
     private void uiStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uiStopActionPerformed
         
-//        for(int i=0; i<8; i++)
-//        {
-//            for(int j=0; j<4; j++)
-//            {
-//                getjTable1().setValueAt(" ",i, j);
-//            }
-//        }
+        Player.getinstance().delete();
       
     }//GEN-LAST:event_uiStopActionPerformed
 
@@ -463,6 +435,8 @@ public class GameViewAndControl extends javax.swing.JDialog {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        
+        UserBoard.getInstance().initialBoard();
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
