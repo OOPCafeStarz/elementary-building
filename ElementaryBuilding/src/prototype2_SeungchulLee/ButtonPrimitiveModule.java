@@ -9,7 +9,7 @@ package prototype2_SeungchulLee;
  *
  * @author user
  */
-public class ButtonPrimitiveModule extends PrimitiveModule{
+public class BoxPrimitiveModule extends PrimitiveModule{
     @Override
     public void execute(){
         
