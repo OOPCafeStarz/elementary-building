@@ -14,8 +14,8 @@ import prototype1.*;
 public class Player {
 
     public static Player p = new Player();
-    private int getCol = UserBoard.getInstance().getColcnt();
-    private int getRow = UserBoard.getInstance().getRowcnt();
+    private int Col = UserBoard.getInstance().getColcnt();
+    private int Row = UserBoard.getInstance().getRowcnt();
 
     private Player() {
 
@@ -26,9 +26,8 @@ public class Player {
     }
 
     public void BlockPut() {
-        
-         UserBoard.getInstance().initialBoard();
-        
+
+        // UserBoard.getInstance().initialBoard();
         for (int i = 0; i < MinQueue.getInstance().getIndex(); i++) {
             if (UserBoard.getInstance().getRowcnt() >= 8) {
                 return;
@@ -37,27 +36,41 @@ public class Player {
                 return;
             }
             if (MinQueue.getInstance().getQueue()[i].equals("→")) {
-                getCol++;
-                getRow = 0;
+                Col++;
+                Row = 0;
             } else {
-                UserBoard.getInstance().getBoard()[7 - getRow][getCol] = MinQueue.getInstance().getQueue()[i];
+                UserBoard.getInstance().getBoard()[7 - Row][Col] = MinQueue.getInstance().getQueue()[i];
 //                jTable1.setValueAt(q[i], 7-rowcnt, colcnt);
 //                rowcnt++;
-                getRow++;
+                Row++;
             }
+
+            UserBoard.getInstance().setRowcnt(Row);
+            UserBoard.getInstance().setColcnt(Col);
         }
-       
-       
-        
-        for(int i=0; i<UserBoard.USER_BOARD_ROW; i++)
-        {
-            for(int j=0; j<UserBoard.USER_BOARD_COL; j++)
-            {
-                if(UserBoard.getInstance().getBoard()[i][j].equals("■"))
+
+        for (int i = 0; i < UserBoard.USER_BOARD_ROW; i++) {
+            for (int j = 0; j < UserBoard.USER_BOARD_COL; j++) {
+                if (UserBoard.getInstance().getBoard()[i][j].equals("■")) {
                     GameViewAndControl.getInstance().getjTable1().setValueAt(UserBoard.getInstance().getBoard()[i][j], i, j);
+                }
             }
         }
 
     }
 
+    public void delete() {
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 4; j++) {
+                UserBoard.getInstance().getBoard()[i][j] = " ";
+                 GameViewAndControl.getInstance().getjTable1().setValueAt(UserBoard.getInstance().getBoard()[i][j], i, j);
+            }
+        }
+        
+        Row = 0;
+        Col = 0;
+        UserBoard.getInstance().setRowcnt(0);
+        UserBoard.getInstance().setColcnt(0);
+
+    }
 }
