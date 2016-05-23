@@ -20,16 +20,9 @@ public static Player getInstance()
 
 public void delete()
 {	
-        String[][] board = new String[8][4];
-    for(int i=0;i<8;i++)
-	{
-		for(int j=0;j<4;j++)
-		{
-			board[i][j]=" ";
-		}
-	}
+   
     
-       UserBoard.getInstance().setBoard(board);
+       UserBoard.getInstance().clearBoard();
 	
 }
 }

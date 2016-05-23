@@ -22,6 +22,23 @@ public class UserBoard {
     
     private String[][] board = new String[USER_BOARD_ROW][USER_BOARD_COL];
     
+    public void clearBoard(){
+        for(int r=0;r<USER_BOARD_ROW;r++){
+            for(int c = 0;c<USER_BOARD_COL;c++){
+                this.board[r][c] = " ";
+            }
+        }
+        
+        // dealing with ui
+        for(int i=0;i<USER_BOARD_ROW;i++)
+        {
+                for(int j=0;j<USER_BOARD_COL;j++)
+                {
+                        GameViewAndControl.getInstance().getjTable1().setValueAt(UserBoard.getInstance().getBoard()[i][j], i, j);
+                }
+        }
+    }
+    
     public void setBoard(String[][] board){
         for(int r=0;r<USER_BOARD_ROW;r++){
             for(int c = 0;c<USER_BOARD_COL;c++){
