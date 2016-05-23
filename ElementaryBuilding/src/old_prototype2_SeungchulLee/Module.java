@@ -3,16 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package prototype2_SeungchulLee;
+package old_prototype2_SeungchulLee;
 
 /**
  *
  * @author user
  */
-public class PrimitiveModule extends Module{
+public abstract class Module { 
     
-    @Override
-    public void execute(){
-    
-    }
+    public abstract void execute();
 }

@@ -5,49 +5,47 @@
  */
 package prototype2_SeungchulLee;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
  * @author user
  */
 public class ContainerModule extends Module{
+    private Module[] queue = new Module[Constants.QUEUE_SIZE];
+    private int queueRear; // points next position of the last element
     
     public ContainerModule(){
-        executableQueue = new Module[SIZE_OF_EXECUTABLE_QUEUE];
-        
-        queueRear = 0;
     }
     
-    void enqueueIntoExecutableQueue(Module m){
-        if(queueRear == SIZE_OF_EXECUTABLE_QUEUE){
+    void enqueue(Module m){
+        if(queueRear == Constants.QUEUE_SIZE){
             // TODO: dealing with Overflow.
             /* Overflow! */
             return;
         }
         
-       executableQueue[queueRear] = m;
+       queue[queueRear] = m;
        queueRear++;
     }
     
     @Override
     public void execute(){
         for(int i=0;i<queueRear;i++){
-            if(GameData.getInstance().getCurrentGameState() == GameData.GAME_STATE_STOP) return;
+            //if(GameData.getInstance().getCurrentGameState() == GameData.GAME_STATE_STOP) return;
             
             try {
                 Thread.sleep(4000);
             } catch (InterruptedException ex) {
-                Logger.getLogger(ContainerModule.class.getName()).log(Level.SEVERE, null, ex);
             }
             
-            executableQueue[i].execute();
+            queue[i].execute();
         }
     }
     
-    private Module[] executableQueue;
-    private int queueRear; // points next position of the last element
+    public void clear(){
+        queueRear = 0;
+    }
     
-    private static final int SIZE_OF_EXECUTABLE_QUEUE = 10;
+    public Module getModuleAt(int index){
+        return queue[index];
+    }
 }

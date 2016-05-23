@@ -10,6 +10,16 @@ package prototype2_SeungchulLee;
  * @author user
  */
 public abstract class Module { 
-    
+    private String icon;
+
     public abstract void execute();
+    
+    public void setIcon(String icon){
+        this.icon = icon;
+    }
+    
+    public String getIcon(){
+        return icon;
+    }
+    
 }
