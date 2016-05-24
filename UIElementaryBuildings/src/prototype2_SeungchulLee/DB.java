@@ -15,6 +15,22 @@ public class DB {
     private PrimitiveModule[] primitiveModules = new PrimitiveModule[Constants.NUM_PRIMITIVE_MODULE_BUTTON];
     private String[][] userBoard = new String[Constants.BOARD_ROW][Constants.BOARD_COL];
     private String[][] answerBoard = new String[Constants.BOARD_ROW][Constants.BOARD_COL];
+    
+    public String[][] getUserBoard() {
+        return userBoard;
+    }
+
+    public void setUserBoard(String[][] userBoard) {
+        this.userBoard = userBoard;
+    }
+
+    public String[][] getAnswerBoard() {
+        return answerBoard;
+    }
+
+    public void setAnswerBoard(String[][] answerBoard) {
+        this.answerBoard = answerBoard;
+    }
     private int currentGrabPosition;
     
     int currentContainerModuleIndex = 0;
