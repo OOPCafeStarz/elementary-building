@@ -15,6 +15,24 @@ public class DB {
     private PrimitiveModule[] primitiveModules = new PrimitiveModule[Constants.NUM_PRIMITIVE_MODULE_BUTTON];
     private String[][] userBoard = new String[Constants.BOARD_ROW][Constants.BOARD_COL];
     private String[][] answerBoard = new String[Constants.BOARD_ROW][Constants.BOARD_COL];
+    private int rowcnt = 0;
+    private int colcnt = 0;
+
+    public int getRowcnt() {
+        return rowcnt;
+    }
+
+    public void setRowcnt(int rowcnt) {
+        this.rowcnt = rowcnt;
+    }
+
+    public int getColcnt() {
+        return colcnt;
+    }
+
+    public void setColcnt(int colcnt) {
+        this.colcnt = colcnt;
+    }
     
     private int currentGrabPosition;
     
@@ -51,6 +69,19 @@ public class DB {
     }
     
     private void init(){
+        
+        // userboard init
+        for(int i=0;i<Constants.BOARD_ROW; ++i)
+        { 
+            userBoard[i] = new String[Constants.BOARD_COL];
+            answerBoard[i] = new String[Constants.BOARD_COL];
+            
+            for(int j=0; j<Constants.BOARD_COL; j++)
+            {
+                userBoard[i][j] = "";
+                answerBoard[i][j] = "";
+            }
+        }
         
         // container modules init
         for(int i=0;i<Constants.NUM_CONTAINER_MODULE_BUTTON;++i){

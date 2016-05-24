@@ -9,6 +9,7 @@ package prototype2_SeungchulLee;
  *
  * @author user
  */
+
 public class PrimitiveModule extends Module{
     
     @Override
