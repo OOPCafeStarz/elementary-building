@@ -57,9 +57,7 @@ public class QueueManager {
         DB.getInstance().clearCurrentModule();
         
         // queue ui change
-        showQueue();
-
-
+        clearUIQueue();
     }
     
     private static void showQueue(){
@@ -83,6 +81,8 @@ public class QueueManager {
     }
     
     private static void clearUIQueue(){
-        
+        for(int i=0; i<Constants.QUEUE_SIZE; i++){
+            GameWindow.getInstance().getQueue().setValueAt("",i, 0);
+        }
     }
 }
