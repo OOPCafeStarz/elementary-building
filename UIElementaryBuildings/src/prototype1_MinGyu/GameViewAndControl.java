@@ -82,6 +82,7 @@ public class GameViewAndControl extends javax.swing.JDialog {
         uiStarButton = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
+        uiJudgeButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -256,6 +257,13 @@ public class GameViewAndControl extends javax.swing.JDialog {
 
         jScrollPane4.setViewportView(jTextPane1);
 
+        uiJudgeButton.setText("Judge");
+        uiJudgeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                uiJudgeButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -292,8 +300,10 @@ public class GameViewAndControl extends javax.swing.JDialog {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(uiPlay)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(uiStop)))))
-                .addContainerGap(85, Short.MAX_VALUE))
+                                .addComponent(uiStop)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(uiJudgeButton)))))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -317,7 +327,8 @@ public class GameViewAndControl extends javax.swing.JDialog {
                 .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(uiStop)
-                    .addComponent(uiPlay))
+                    .addComponent(uiPlay)
+                    .addComponent(uiJudgeButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -427,9 +438,17 @@ public class GameViewAndControl extends javax.swing.JDialog {
         uiInstructionQueue[7-(MinQueue.getInstance().getIndex()-1)].setText(""+MinQueue.getInstance().getQueue()[MinQueue.getInstance().getIndex()-1]);
     }//GEN-LAST:event_uiStarButtonMouseClicked
 
+    private void uiJudgeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uiJudgeButtonActionPerformed
+        // TODO add your handling code here:
+        Judge.mark();
+    }//GEN-LAST:event_uiJudgeButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
+    public javax.swing.JTextPane getJudge(){
+        return uiJudgeText;
+    }
     public static void main(String args[]) {
          
         /* Set the Nimbus look and feel */
@@ -493,6 +512,7 @@ public class GameViewAndControl extends javax.swing.JDialog {
     private javax.swing.JTextPane jTextPane1;
     private javax.swing.JButton uiBoxButton;
     private javax.swing.JButton uiDeleteButton;
+    private javax.swing.JButton uiJudgeButton;
     private javax.swing.JButton uiPlay;
     private javax.swing.JButton uiPutButton;
     private javax.swing.JButton uiStarButton;
