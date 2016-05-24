@@ -5,6 +5,8 @@
  */
 package prototype2_SeungchulLee;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author MinGyu
@@ -21,6 +23,7 @@ public class Judge {
                  }
              }
          }
+         JOptionPane.showMessageDialog(null, "Accepted!", "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
          GameWindow.getInstance().getJudgeText().setText("Accepted");
          return;
      }
