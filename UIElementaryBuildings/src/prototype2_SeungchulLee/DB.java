@@ -38,9 +38,15 @@ public class DB {
     int currentGameState = Constants.GAME_STATE_STOP;
     
     private DB(){
+        init();
+    }
+    
+    private void init(){
+        
         // container modules init
         for(int i=0;i<Constants.NUM_CONTAINER_MODULE_BUTTON;++i){
             containerModules[i] = new ContainerModule();
+            containerModules[i].setIcon(Integer.toString(i));
         }
         
         // primitive modules init
@@ -58,7 +64,7 @@ public class DB {
         return db;
     }
     
-    public ContainerModule getCurrentModule(){
+    public ContainerModule getCurrentContainerModule(){
         return containerModules[currentContainerModuleIndex];
     }
     
@@ -71,7 +77,7 @@ public class DB {
     }
     
     public void enqueuePrimitiveModule(int index){
-        containerModules[currentContainerModuleIndex].enqueue(primitiveModules[index]);
+        getCurrentContainerModule().enqueue(primitiveModules[index]);
     }
     
     public void enqueueContainerModule(int index){

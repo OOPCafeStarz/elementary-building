@@ -28,25 +28,23 @@ public class QueueManager {
         return instance;
     }
     
-    public void enqueuePrimitiveModule(int index){
-        // primitive queue db change
+    public static void enqueuePrimitiveModule(int index){
+        // DB
         DB.getInstance().enqueuePrimitiveModule(index);
-        System.out.println("asdfsadf");
         
         // queue ui change
         showQueue();
     }
     
-    public void enqueueContainerModule(int index){
+    public static void enqueueContainerModule(int index){
         // container queue db change
         DB.getInstance().enqueueContainerModule(index);
         
         // queue ui change
         showQueue();
-
     }
     
-    public void changeCurModuleTo(int index){
+    public static void changeCurModuleTo(int index){
         // current queue db change
         DB.getInstance().setCurrentContainerModule(index);
       
@@ -54,50 +52,39 @@ public class QueueManager {
         showQueue();
     }
     
-    public void clearCurrentQueue(){
+    public static void clearCurrentQueue(){
         // current queue db change
         DB.getInstance().clearCurrentModule();
         
         // queue ui change
         showQueue();
 
+
     }
     
-    private void showQueue(){
+    private static void showQueue(){
         clearUIQueue();
         
-        System.out.println("asdfsdfsdfsfdsdfsdfsdf");
+        GameWindow gw = GameWindow.getInstance();
+        DB db = DB.getInstance();
+        String currentContainerModuleName = db.getCurrentContainerModule().getIcon();
         
-        // queue ui change
-        ContainerModule ccm = DB.getInstance().getCurrentModule();
-        int size = DB.getInstance().getcurrentContainerModuleIndex();
-        String icon = ccm.getIcon();
+        // 큐 이름 출력
+        gw.getQueueName().setText(currentContainerModuleName);
         
-        JTable queue = GameWindow.getInstance().getQueue();
-        JTableHeader th = queue.getTableHeader();
-        TableColumnModel tcm = th.getColumnModel();
-        TableColumn tc = tcm.getColumn(0);
-        tc.setHeaderValue(icon); // queue header change
+        // 큐 내용 출력
+        ContainerModule currentContainerModule = db.getCurrentContainerModule();
+        int queueSize = currentContainerModule.getQueueRear(); 
+       
+        System.out.println("queueSize : " + queueSize);
         
-        for(int i=0;i<size;i++){
-            int queuePosition = (Constants.QUEUE_SIZE-1) - i;
-            queue.setValueAt(ccm.getModuleAt(i).getIcon(), 0, queuePosition);    
+        for(int i=0;i<queueSize;++i){
+            String icon = currentContainerModule.getModuleAt(i).getIcon();
+            gw.getQueue().setValueAt(icon, Constants.QUEUE_SIZE-1-i, 0);
         }
     }
     
-    private void clearUIQueue(){
-        System.out.println("XXX");
-        
-        // queue ui change
-        int currentContainerModuleIndex = DB.getInstance().getcurrentContainerModuleIndex();
-        JTable queue = GameWindow.getInstance().getQueue();
-        GameWindow.getInstance().getQueueName().setText(Integer.toString(currentContainerModuleIndex));
-        
-        for(int i=0;i<Constants.QUEUE_SIZE;i++){
-            queue.setValueAt(" ", 0, i);    
-        }
-        
-                System.out.println("ZZZ");
-
+    private static void clearUIQueue(){
+        /**/
     }
 }

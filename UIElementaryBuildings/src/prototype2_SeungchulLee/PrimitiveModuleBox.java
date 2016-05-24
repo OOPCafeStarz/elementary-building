@@ -12,9 +12,9 @@ package prototype2_SeungchulLee;
 public class PrimitiveModuleBox extends PrimitiveModule{
     private static PrimitiveModuleBox pmBox;
     
-    private String icon = Constants.ICON_BOX; 
-    
-    private PrimitiveModuleBox(){}
+    private PrimitiveModuleBox(){
+        setIcon(Constants.ICON_BOX);
+    }
   
     public static PrimitiveModuleBox getInstance(){
         if(pmBox == null)

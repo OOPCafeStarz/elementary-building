@@ -11,8 +11,11 @@ package prototype2_SeungchulLee;
  */
 public class PrimitiveModuleMoveRight extends PrimitiveModule{
     private static PrimitiveModuleMoveRight pmmr;
-    private String icon = Constants.ICON_MOVE_RIGHT; 
 
+    private PrimitiveModuleMoveRight(){
+        setIcon(Constants.ICON_MOVE_RIGHT);
+    }
+    
     public static PrimitiveModuleMoveRight getInstance(){
         if(pmmr == null)
             pmmr = new PrimitiveModuleMoveRight();

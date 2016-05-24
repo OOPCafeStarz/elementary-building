@@ -11,9 +11,10 @@ package prototype2_SeungchulLee;
  */
 public class PrimitiveModuleTriangle extends PrimitiveModule{
     private static PrimitiveModuleTriangle pmt;
-    private String icon = Constants.ICON_TRIANGLE; 
 
-    private PrimitiveModuleTriangle(){}
+    private PrimitiveModuleTriangle(){
+        setIcon(Constants.ICON_TRIANGLE);
+    }
     
     public static PrimitiveModuleTriangle getInstance(){
         if(pmt == null)

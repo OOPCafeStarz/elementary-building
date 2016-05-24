@@ -12,9 +12,9 @@ package prototype2_SeungchulLee;
 public class PrimitiveModuleCircle extends PrimitiveModule{
     private static PrimitiveModuleCircle pmc;
     
-    private String icon = Constants.ICON_CIRCLE;
-    
-    private PrimitiveModuleCircle(){}
+    private PrimitiveModuleCircle(){
+        setIcon(Constants.ICON_CIRCLE);
+    }
     
     public static PrimitiveModuleCircle getInstance(){
         if(pmc == null)

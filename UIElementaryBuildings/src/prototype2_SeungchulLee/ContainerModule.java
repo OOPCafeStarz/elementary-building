@@ -11,7 +11,7 @@ package prototype2_SeungchulLee;
  */
 public class ContainerModule extends Module{
     private Module[] queue = new Module[Constants.QUEUE_SIZE];
-    private int queueRear; // points next position of the last element
+    private int queueRear = 0; // points next position of the last element
     
     public ContainerModule(){
     }
@@ -47,5 +47,9 @@ public class ContainerModule extends Module{
     
     public Module getModuleAt(int index){
         return queue[index];
+    }
+    
+    public int getQueueRear(){
+        return queueRear;
     }
 }

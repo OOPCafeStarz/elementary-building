@@ -10,10 +10,11 @@ package prototype2_SeungchulLee;
  * @author user
  */
 public class PrimitiveModuleMoveLeft extends PrimitiveModule{
-    private static PrimitiveModuleMoveLeft pmml;
-    private String icon = Constants.ICON_MOVE_LEFT; 
+    private static PrimitiveModuleMoveLeft pmml; 
     
-    private PrimitiveModuleMoveLeft(){}
+    private PrimitiveModuleMoveLeft(){
+        setIcon(Constants.ICON_MOVE_LEFT);
+    }
     
     public static PrimitiveModuleMoveLeft getInstance(){
         if(pmml == null)
