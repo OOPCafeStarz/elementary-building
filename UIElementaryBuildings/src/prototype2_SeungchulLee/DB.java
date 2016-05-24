@@ -16,6 +16,20 @@ public class DB {
     private String[][] userBoard = new String[Constants.BOARD_ROW][Constants.BOARD_COL];
     private String[][] answerBoard = new String[Constants.BOARD_ROW][Constants.BOARD_COL];
     
+    private int currentGrabPosition;
+    
+    int currentContainerModuleIndex = 0;
+    
+    private int currentGameState = Constants.GAME_STATE_STOP;
+    
+    public int getCurrentGameState(){
+        return currentGameState;
+    }
+    
+    public void setCurrentGameState(int newGameState){
+        currentGameState = newGameState;
+    }
+    
     public String[][] getUserBoard() {
         return userBoard;
     }
@@ -31,11 +45,6 @@ public class DB {
     public void setAnswerBoard(String[][] answerBoard) {
         this.answerBoard = answerBoard;
     }
-    private int currentGrabPosition;
-    
-    int currentContainerModuleIndex = 0;
-    
-    int currentGameState = Constants.GAME_STATE_STOP;
     
     private DB(){
         init();
@@ -84,9 +93,6 @@ public class DB {
         containerModules[currentContainerModuleIndex].enqueue(containerModules[index]);
     }
     
-    public void setCurrentGameState(int newGameState){
-        currentGameState = newGameState;
-    }
     
     public void clearCurrentModule(){
         containerModules[currentContainerModuleIndex].clear();

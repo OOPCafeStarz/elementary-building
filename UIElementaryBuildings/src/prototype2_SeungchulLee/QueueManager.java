@@ -75,8 +75,6 @@ public class QueueManager {
         // 큐 내용 출력
         ContainerModule currentContainerModule = db.getCurrentContainerModule();
         int queueSize = currentContainerModule.getQueueRear(); 
-       
-        System.out.println("queueSize : " + queueSize);
         
         for(int i=0;i<queueSize;++i){
             String icon = currentContainerModule.getModuleAt(i).getIcon();
@@ -85,6 +83,6 @@ public class QueueManager {
     }
     
     private static void clearUIQueue(){
-        /**/
+        
     }
 }

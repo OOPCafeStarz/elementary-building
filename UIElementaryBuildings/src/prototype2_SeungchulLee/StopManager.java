@@ -22,6 +22,6 @@ public class StopManager {
     }
     
     public void stop(){
-        
+        DB.getInstance().setCurrentGameState(Constants.GAME_STATE_STOP);
     }
 }

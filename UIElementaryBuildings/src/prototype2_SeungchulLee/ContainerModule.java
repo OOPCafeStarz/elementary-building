@@ -29,8 +29,9 @@ public class ContainerModule extends Module{
     
     @Override
     public void execute(){
+        Judge.doItJudge();
         for(int i=0;i<queueRear;i++){
-            //if(GameData.getInstance().getCurrentGameState() == GameData.GAME_STATE_STOP) return;
+            if(DB.getInstance().getCurrentGameState() == Constants.GAME_STATE_STOP) return;
             
             try {
                 Thread.sleep(4000);
@@ -38,6 +39,9 @@ public class ContainerModule extends Module{
             }
             
             queue[i].execute();
+            
+            Judge.doItJudge();
+
         }
     }
     

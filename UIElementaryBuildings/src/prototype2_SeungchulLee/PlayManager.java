@@ -5,6 +5,8 @@
  */
 package prototype2_SeungchulLee;
 
+import com.sun.corba.se.impl.orbutil.closure.Constant;
+
 /**
  *
  * @author user
@@ -22,6 +24,7 @@ public class PlayManager {
     }
     
     public void play(){
+        DB.getInstance().setCurrentGameState(Constants.GAME_STATE_RUN);
         DB.getInstance().getCurrentContainerModule().execute();
     }
 }

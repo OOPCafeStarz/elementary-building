@@ -555,7 +555,7 @@ public class GameWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton22MouseClicked
 
     private void jButton23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton23MouseClicked
-        // execute stop button
+        // Stop Button click
         StopManager.getInstance().stop();
     }//GEN-LAST:event_jButton23MouseClicked
 
