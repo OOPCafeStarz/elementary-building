@@ -71,7 +71,7 @@ public class DB {
     private void init(){
         
         // userboard init
-        for(int i=0;i<Constants.BOARD_ROW; ++i)
+        for(int i=0;i<Constants.BOARD_ROW; i++)
         { 
             userBoard[i] = new String[Constants.BOARD_COL];
             answerBoard[i] = new String[Constants.BOARD_COL];

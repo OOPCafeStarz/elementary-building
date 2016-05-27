@@ -13,18 +13,33 @@ import javax.swing.JOptionPane;
  */
 public class Judge {
      public static void doItJudge(){
+         boolean accepted = true;
+         System.out.println("ssss" );
+         
          String[][] userBoard = DB.getInstance().getUserBoard();
          String[][] answerBoard = DB.getInstance().getAnswerBoard();
+         
+         
+         for(int i=0; i<Constants.BOARD_ROW; i++)
+         {
+             for(int j=0; j<Constants.BOARD_COL; j++)
+             {
+                 System.out.print(userBoard[i][j] + " ");
+             }
+             System.out.println();
+         }
+         
          for(int i=0; i<Constants.BOARD_ROW; i++){
              for(int j=0; j<Constants.BOARD_COL; j++){
                  if(userBoard[i][j].equals(answerBoard[i][j])==false){
                      GameWindow.getInstance().getJudgeText().setText("Wrong Answer");
-                     return;
+                     accepted = false;
                  }
              }
          }
-         JOptionPane.showMessageDialog(null, "Accepted!", "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
-         GameWindow.getInstance().getJudgeText().setText("Accepted");
-         return;
+         if(accepted){
+            JOptionPane.showMessageDialog(null, "Accepted!", "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
+            GameWindow.getInstance().getJudgeText().setText("Accepted");
+         }
      }
 }
