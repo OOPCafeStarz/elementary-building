@@ -9,6 +9,32 @@ package elementarybuildingsver2;
  *
  * @author user
  */
-public class Problem5 {
-    
+public class Problem5 extends Problem {
+
+    private static Problem5 p;
+
+    private Problem5() {
+
+        String[][] ans5 = {
+            {"△", "○", "△", "○", "○", "☆", "☆", "○"},
+            {"○", "■", "○", "■", "★", "■", "■", "★"},
+            {"□", "▲", "□", "▲", "□", "★", "★", "□"},
+            {"★", "□", "★", "□", "□", "□", "□", "□"},
+            {"○", "☆", "○", "☆", "○", "☆", "☆", "○"},
+            {"□", "□", "□", "□", "★", "■", "■", "★"},
+            {"○", "■", "○", "■", "△", "□", "□", "△"},
+            {"□", "▲", "□", "▲", "□", "□", "□", "□"},
+        };
+
+        setBoard(ans5);
+    }
+
+    public static Problem5 getInstance() {
+        if (p == null) {
+            p = new Problem5();
+        }
+
+        return p;
+    }
+
 }
