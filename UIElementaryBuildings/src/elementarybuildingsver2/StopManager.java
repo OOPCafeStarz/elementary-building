@@ -22,7 +22,7 @@ public class StopManager {
     }
     
     public void stop(){
-        UserBoardManager.clearUserboard();;
+        UserBoardManager.clearUserboard();
         DB.getInstance().setCurrentGameState(Constants.GAME_STATE_STOP); 
     }
 }
