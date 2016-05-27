@@ -26,10 +26,10 @@ public class PrimitiveModuleBox extends PrimitiveModule{
     @Override
     public void execute(){
         // change db
-        DB.getInstance().getUserBoard()[7 - DB.getInstance().getRowcnt()][DB.getInstance().getColcnt()] = Constants.ICON_BOX;
+        DB.getInstance().getUserBoard()[DB.getInstance().getRowcnt()][DB.getInstance().getColcnt()] = Constants.ICON_BOX;
         
         DB.getInstance().setRowcnt(DB.getInstance().getRowcnt() + 1);
         // change ui
-        GameWindow.getInstance().getUserTable().setValueAt(Constants.ICON_BOX, DB.getInstance().getRowcnt(), DB.getInstance().getColcnt());
+        GameWindow.getInstance().getUserTable().setValueAt(Constants.ICON_BOX, Constants.BOARD_ROW- DB.getInstance().getRowcnt(), DB.getInstance().getColcnt());
     }
 }

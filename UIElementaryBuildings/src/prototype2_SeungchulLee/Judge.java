@@ -20,15 +20,6 @@ public class Judge {
          String[][] answerBoard = DB.getInstance().getAnswerBoard();
          
          
-         for(int i=0; i<Constants.BOARD_ROW; i++)
-         {
-             for(int j=0; j<Constants.BOARD_COL; j++)
-             {
-                 System.out.print(userBoard[i][j] + " ");
-             }
-             System.out.println();
-         }
-         
          for(int i=0; i<Constants.BOARD_ROW; i++){
              for(int j=0; j<Constants.BOARD_COL; j++){
                  if(userBoard[i][j].equals(answerBoard[i][j])==false){
