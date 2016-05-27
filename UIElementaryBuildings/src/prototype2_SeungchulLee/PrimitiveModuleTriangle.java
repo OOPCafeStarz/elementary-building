@@ -25,6 +25,8 @@ public class PrimitiveModuleTriangle extends PrimitiveModule{
     
     @Override
     public void execute(){
+         if(DB.getInstance().getRowcnt()==8) // 보드 사이즈는 8
+            return; 
         // change db
         DB.getInstance().getUserBoard()[DB.getInstance().getRowcnt()][DB.getInstance().getColcnt()] = Constants.ICON_TRIANGLE;
         
