@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package prototype2_SeungchulLee;
+package elementarybuildingsver2;
 
 /**
  *
  * @author user
  */
-public class Problem4 extends Problem{
+public class Problem2 extends Problem{
     
 }
