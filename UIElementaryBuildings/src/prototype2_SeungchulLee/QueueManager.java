@@ -15,19 +15,6 @@ import javax.swing.table.TableColumnModel;
  * @author user
  */
 public class QueueManager {
-    private static QueueManager instance;
-    
-    private QueueManager(){
-        
-    }
-    
-    public static QueueManager getInstance(){
-        if(instance == null)
-            instance = new QueueManager();
-        
-        return instance;
-    }
-    
     public static void enqueuePrimitiveModule(int index){
         // DB
         DB.getInstance().enqueuePrimitiveModule(index);

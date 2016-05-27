@@ -571,32 +571,32 @@ public class GameWindow extends javax.swing.JFrame {
     // 역할 : primitive module 0. 클릭시 박스를 큐에 추가.
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
         // Box button click
-       QueueManager.getInstance().enqueuePrimitiveModule(Constants.PM_BUTTON_BOX);
+       QueueManager.enqueuePrimitiveModule(Constants.PM_BUTTON_BOX);
     }//GEN-LAST:event_jButton10MouseClicked
 
     private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
         // enqueue pmButton_circle
-        QueueManager.getInstance().enqueuePrimitiveModule(Constants.PM_BUTTON_CIRCLE);
+        QueueManager.enqueuePrimitiveModule(Constants.PM_BUTTON_CIRCLE);
     }//GEN-LAST:event_jButton11MouseClicked
 
     private void jButton12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseClicked
         // enqueue pmButton_triangle
-        QueueManager.getInstance().enqueuePrimitiveModule(Constants.PM_BUTTON_TRIANGLE);
+        QueueManager.enqueuePrimitiveModule(Constants.PM_BUTTON_TRIANGLE);
     }//GEN-LAST:event_jButton12MouseClicked
 
     private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
         // enqueue pmButton_move_left
-        QueueManager.getInstance().enqueuePrimitiveModule(Constants.PM_BUTTON_MOVE_LEFT);
+        QueueManager.enqueuePrimitiveModule(Constants.PM_BUTTON_MOVE_LEFT);
     }//GEN-LAST:event_jButton13MouseClicked
 
     private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
         // enqueue pmButton_move_right
-        QueueManager.getInstance().enqueuePrimitiveModule(Constants.PM_BUTTON_MOVE_RIGHT);
+        QueueManager.enqueuePrimitiveModule(Constants.PM_BUTTON_MOVE_RIGHT);
     }//GEN-LAST:event_jButton14MouseClicked
 
     private void jButton22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton22MouseClicked
         // execute play button
-        PlayManager.getInstance().play();
+        PlayManager.play();
     }//GEN-LAST:event_jButton22MouseClicked
 
     private void jButton23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton23MouseClicked
@@ -606,7 +606,7 @@ public class GameWindow extends javax.swing.JFrame {
 
     private void jButton24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton24MouseClicked
         // clear current queue
-        QueueManager.getInstance().clearCurrentQueue();
+        QueueManager.clearCurrentQueue();
     }//GEN-LAST:event_jButton24MouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -626,7 +626,7 @@ public class GameWindow extends javax.swing.JFrame {
           //0번버튼
         if (evt.getButton()==1)//좌클릭 - 모듈에 모듈을 넣음
         {
-            QueueManager.getInstance().enqueueContainerModule(0); 
+            QueueManager.enqueueContainerModule(0); 
         }
         if (evt.getButton()==3)//우클릭 = 현재 모듈로 채택후 uiqueue에 보이게함
         {
@@ -640,7 +640,7 @@ public class GameWindow extends javax.swing.JFrame {
           //1번버튼
         if (evt.getButton()==1)//좌클릭 - 모듈에 모듈을 넣음
         {
-            QueueManager.getInstance().enqueueContainerModule(1); 
+            QueueManager.enqueueContainerModule(1); 
         }
         if (evt.getButton()==3)//우클릭 = 현재 모듈로 채택후 uiqueue에 보이게함
         {
@@ -653,7 +653,7 @@ public class GameWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
           if (evt.getButton()==1)//좌클릭 - 모듈에 모듈을 넣음
         {
-            QueueManager.getInstance().enqueueContainerModule(2); 
+            QueueManager.enqueueContainerModule(2); 
         }
         if (evt.getButton()==3)//우클릭 = 현재 모듈로 채택후 uiqueue에 보이게함
         {
@@ -666,7 +666,7 @@ public class GameWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
          if (evt.getButton()==1)//좌클릭 - 모듈에 모듈을 넣음
         {
-            QueueManager.getInstance().enqueueContainerModule(3); 
+            QueueManager.enqueueContainerModule(3); 
         }
         if (evt.getButton()==3)//우클릭 = 현재 모듈로 채택후 uiqueue에 보이게함
         {
@@ -679,7 +679,7 @@ public class GameWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
           if (evt.getButton()==1)//좌클릭 - 모듈에 모듈을 넣음
         {
-            QueueManager.getInstance().enqueueContainerModule(4); 
+            QueueManager.enqueueContainerModule(4); 
         }
         if (evt.getButton()==3)//우클릭 = 현재 모듈로 채택후 uiqueue에 보이게함
         {
@@ -692,7 +692,7 @@ public class GameWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
           if (evt.getButton()==1)//좌클릭 - 모듈에 모듈을 넣음
         {
-            QueueManager.getInstance().enqueueContainerModule(5); 
+            QueueManager.enqueueContainerModule(5); 
         }
         if (evt.getButton()==3)//우클릭 = 현재 모듈로 채택후 uiqueue에 보이게함
         {
@@ -705,7 +705,7 @@ public class GameWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
          if (evt.getButton()==1)//좌클릭 - 모듈에 모듈을 넣음
         {
-            QueueManager.getInstance().enqueueContainerModule(6); 
+            QueueManager.enqueueContainerModule(6); 
         }
         if (evt.getButton()==3)//우클릭 = 현재 모듈로 채택후 uiqueue에 보이게함
         {
@@ -718,7 +718,7 @@ public class GameWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
          if (evt.getButton()==1)//좌클릭 - 모듈에 모듈을 넣음
         {
-            QueueManager.getInstance().enqueueContainerModule(7); 
+            QueueManager.enqueueContainerModule(7); 
         }
         if (evt.getButton()==3)//우클릭 = 현재 모듈로 채택후 uiqueue에 보이게함
         {
@@ -733,7 +733,7 @@ public class GameWindow extends javax.swing.JFrame {
         
             if (evt.getButton()==1)//좌클릭 - 모듈에 모듈을 넣음
         {
-            QueueManager.getInstance().enqueueContainerModule(8); 
+            QueueManager.enqueueContainerModule(8); 
         }
         if (evt.getButton()==3)//우클릭 = 현재 모듈로 채택후 uiqueue에 보이게함
         {

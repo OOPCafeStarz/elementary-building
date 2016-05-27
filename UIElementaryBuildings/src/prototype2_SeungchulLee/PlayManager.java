@@ -12,18 +12,8 @@ import com.sun.corba.se.impl.orbutil.closure.Constant;
  * @author user
  */
 public class PlayManager {
-    private static PlayManager pm;
     
-    private PlayManager(){}
-    
-    public static PlayManager getInstance(){
-        if(pm == null)
-            pm = new PlayManager();
-        
-        return pm;
-    }
-    
-    public void play(){
+    public static void play(){
         DB.getInstance().setCurrentGameState(Constants.GAME_STATE_RUN);
         DB.getInstance().getCurrentContainerModule().execute();
     }

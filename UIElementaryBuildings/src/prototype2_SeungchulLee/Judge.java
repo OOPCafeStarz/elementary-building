@@ -33,13 +33,13 @@ public class Judge {
              for(int j=0; j<Constants.BOARD_COL; j++){
                  if(userBoard[i][j].equals(answerBoard[i][j])==false){
                      GameWindow.getInstance().getJudgeText().setText("Wrong Answer");
-                     accepted = false;
+                     return;
                  }
              }
          }
-         if(accepted){
-            JOptionPane.showMessageDialog(null, "Accepted!", "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
-            GameWindow.getInstance().getJudgeText().setText("Accepted");
-         }
+         //aceepted
+        JOptionPane.showMessageDialog(null, "Accepted!", "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
+        GameWindow.getInstance().getJudgeText().setText("Accepted");
+        DB.getInstance().setCurrentGameState(Constants.GAME_STATE_STOP);
      }
 }

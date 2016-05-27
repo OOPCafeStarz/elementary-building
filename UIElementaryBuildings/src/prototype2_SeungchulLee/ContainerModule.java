@@ -34,7 +34,7 @@ public class ContainerModule extends Module{
             if(DB.getInstance().getCurrentGameState() == Constants.GAME_STATE_STOP) return;
             
             try {
-                Thread.sleep(4000);
+                Thread.sleep(500);
             } catch (InterruptedException ex) {
             }
             
