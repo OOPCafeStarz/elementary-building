@@ -13,11 +13,23 @@ public class Problem1 extends Problem{
     private Problem1 p;
     
     private Problem1(){
-        String[][] answerboard = new String[Constants.BOARD_ROW][Constants.BOARD_COL];
         
-        //make board
         
-        setBoard(answerboard);
+        String [][] ans1 = {
+        
+        {"","□","□","","","■","■",""},
+        {"","□","□","","","□","□",""},
+        {"","□","□","","","□","□",""},
+        {"","□","□","","","□","□",""},
+        {"","□","□","","","□","□",""},
+        {"","□","□","","","□","□",""},
+        {"△","□","□","△","△","□","□","△"},
+        {"△","□","□","△","△","□","□","△"}
+    };
+   
+    
+        
+        setBoard(ans1);
     }
     
     public Problem1 getInstance(){

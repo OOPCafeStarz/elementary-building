@@ -132,4 +132,16 @@ public class DB {
     public int getcurrentContainerModuleIndex(){
         return currentContainerModuleIndex;
     }
+    
+    public void clearUserBoard()
+    {   
+         for (int i=0;i<Constants.BOARD_ROW;i++)
+        {
+            for (int j=0; j<Constants.BOARD_COL;j++)
+            {
+               getUserBoard()[i][j] = "";// db에있는 보드를 초기화
+               GameWindow.getInstance(). getUserTable().setValueAt("", i, j);//ui에 보이는 것을 초기화
+            }
+        }   
+    }
 }
