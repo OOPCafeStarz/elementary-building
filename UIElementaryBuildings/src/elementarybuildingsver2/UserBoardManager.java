@@ -41,6 +41,11 @@ public class UserBoardManager {
     
     public static void clearUserboard()
     {
+        // change ui
+        GameWindow.getInstance().getGrabTable().setValueAt("", 0, DB.getInstance().getCurrentGrabPosition());
+        GameWindow.getInstance().getGrabTable().setValueAt("↓", 0, 0);
+        // change db
+        DB.getInstance().setCurrentGrabPosition(0);
         for (int i=0;i<Constants.BOARD_ROW;i++)
         {
             for (int j=0; j<Constants.BOARD_COL;j++)
