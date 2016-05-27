@@ -31,4 +31,5 @@ public class Constants {
     public static final String ICON_MOVE_LEFT = "←";
     public static final String ICON_MOVE_RIGHT = "→";
     
+    public static final int NUM_SELECT_PROBLEM_BUTTON = 4;
 }
