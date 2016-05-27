@@ -87,6 +87,13 @@ public class DB {
         primitiveModules[Constants.PM_BUTTON_STAR] = PrimitiveModuleStar.getInstance();
         
         // problems int
+        problems[0] = Problem1.getInstance();
+        problems[1] = Problem2.getInstance();
+        problems[2] = Problem3.getInstance();
+        problems[3] = Problem4.getInstance();
+        
+        // answer board init
+        //AnswerBoardManager.load(0);
     }
     
     public static DB getInstance(){
@@ -94,6 +101,10 @@ public class DB {
             db = new DB();
         
         return db;
+    }
+    
+    public void loadProblem(int problemNumber){
+        answerBoard = problems[problemNumber].getBoard();
     }
     
     public ContainerModule getCurrentContainerModule(){

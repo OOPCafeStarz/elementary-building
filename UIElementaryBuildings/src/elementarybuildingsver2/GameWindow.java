@@ -491,6 +491,11 @@ public class GameWindow extends javax.swing.JFrame {
         }
 
         jButton25.setText("problem1");
+        jButton25.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton25MouseClicked(evt);
+            }
+        });
         jButton25.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton25ActionPerformed(evt);
@@ -498,10 +503,25 @@ public class GameWindow extends javax.swing.JFrame {
         });
 
         jButton26.setText("problem2");
+        jButton26.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton26MouseClicked(evt);
+            }
+        });
 
         jButton27.setText("problem3");
+        jButton27.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton27MouseClicked(evt);
+            }
+        });
 
         jButton28.setText("problem4");
+        jButton28.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton28MouseClicked(evt);
+            }
+        });
 
         jButton29.setText("problem5");
 
@@ -870,6 +890,26 @@ public class GameWindow extends javax.swing.JFrame {
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton25ActionPerformed
+
+    private void jButton25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton25MouseClicked
+        // LOAD PROBLEM 1
+        AnswerBoardManager.load(0);
+    }//GEN-LAST:event_jButton25MouseClicked
+
+    private void jButton26MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton26MouseClicked
+         // LOAD PROBLEM 2
+        AnswerBoardManager.load(1);
+    }//GEN-LAST:event_jButton26MouseClicked
+
+    private void jButton27MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton27MouseClicked
+         // LOAD PROBLEM 3
+        AnswerBoardManager.load(2);
+    }//GEN-LAST:event_jButton27MouseClicked
+
+    private void jButton28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton28MouseClicked
+         // LOAD PROBLEM 4
+        AnswerBoardManager.load(3);
+    }//GEN-LAST:event_jButton28MouseClicked
 
     /**
      * @param args the command line arguments
