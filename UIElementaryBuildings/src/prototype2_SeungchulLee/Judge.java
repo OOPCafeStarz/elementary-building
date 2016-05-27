@@ -14,7 +14,6 @@ import javax.swing.JOptionPane;
 public class Judge {
      public static void doItJudge(){
          boolean accepted = true;
-         System.out.println("ssss" );
          
          String[][] userBoard = DB.getInstance().getUserBoard();
          String[][] answerBoard = DB.getInstance().getAnswerBoard();
