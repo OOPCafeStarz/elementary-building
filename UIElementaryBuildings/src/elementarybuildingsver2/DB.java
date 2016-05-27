@@ -16,9 +16,10 @@ public class DB {
     private PrimitiveModule[] primitiveModules = new PrimitiveModule[Constants.NUM_PRIMITIVE_MODULE_BUTTON];
     private String[][] userBoard = new String[Constants.BOARD_ROW][Constants.BOARD_COL];
     private String[][] answerBoard = new String[Constants.BOARD_ROW][Constants.BOARD_COL];
-   private int currentGrabPosition;
+    private int currentGrabPosition;
     private int currentContainerModuleIndex = 0;
     private int currentGameState = Constants.GAME_STATE_STOP;
+    private Problem[] problems = new Problem[Constants.NUM_SELECT_PROBLEM_BUTTON];
     
     public int getCurrentGrabPosition() {
         return currentGrabPosition;
@@ -71,9 +72,6 @@ public class DB {
             }
         }
         
-        // answerboard custom
-        answerBoard[7][0] = "□";
-        
         // container modules init
         for(int i=0;i<Constants.NUM_CONTAINER_MODULE_BUTTON;++i){
             containerModules[i] = new ContainerModule();
@@ -86,6 +84,9 @@ public class DB {
         primitiveModules[Constants.PM_BUTTON_TRIANGLE] = PrimitiveModuleTriangle.getInstance();
         primitiveModules[Constants.PM_BUTTON_MOVE_LEFT] = PrimitiveModuleMoveLeft.getInstance();
         primitiveModules[Constants.PM_BUTTON_MOVE_RIGHT] = PrimitiveModuleMoveRight.getInstance();
+        primitiveModules[Constants.PM_BUTTON_STAR] = PrimitiveModuleStar.getInstance();
+        
+        // problems int
     }
     
     public static DB getInstance(){
