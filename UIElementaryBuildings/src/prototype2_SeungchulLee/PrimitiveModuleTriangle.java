@@ -26,7 +26,10 @@ public class PrimitiveModuleTriangle extends PrimitiveModule{
     @Override
     public void execute(){
         // change db
+        DB.getInstance().getUserBoard()[7 - DB.getInstance().getRowcnt()][DB.getInstance().getColcnt()] = Constants.ICON_TRIANGLE;
         
+        DB.getInstance().setRowcnt(DB.getInstance().getRowcnt() + 1);
         // change ui
+        GameWindow.getInstance().getUserTable().setValueAt(Constants.ICON_TRIANGLE, DB.getInstance().getRowcnt(), DB.getInstance().getColcnt());
     }
 }

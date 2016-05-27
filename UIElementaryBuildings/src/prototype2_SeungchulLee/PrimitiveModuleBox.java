@@ -12,7 +12,6 @@ package prototype2_SeungchulLee;
 public class PrimitiveModuleBox extends PrimitiveModule{
     private static PrimitiveModuleBox pmBox;
    
- 
     private PrimitiveModuleBox(){
         setIcon(Constants.ICON_BOX);
     }
