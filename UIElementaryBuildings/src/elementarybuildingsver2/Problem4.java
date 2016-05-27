@@ -10,7 +10,7 @@ package elementarybuildingsver2;
  * @author user
  */
 public class Problem4 extends Problem{
-       private Problem4 p;
+       private static Problem4 p;
     
     private Problem4(){
         String[][] answerboard = {
@@ -27,7 +27,7 @@ public class Problem4 extends Problem{
         setBoard(answerboard);
     }
     
-    public Problem4 getInstance(){
+    public static  Problem4 getInstance(){
         if(p == null)
             p = new Problem4();
         

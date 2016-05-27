@@ -10,7 +10,7 @@ package elementarybuildingsver2;
  * @author user
  */
 public class Problem2 extends Problem{
-    private Problem2 p;
+    private static Problem2 p;
       private Problem2(){
         
         
@@ -32,7 +32,7 @@ public class Problem2 extends Problem{
     }
     
     
-     public Problem2 getInstance(){
+     public static  Problem2 getInstance(){
         if(p == null)
             p = new Problem2();
         

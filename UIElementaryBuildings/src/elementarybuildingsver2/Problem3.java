@@ -10,7 +10,7 @@ package elementarybuildingsver2;
  * @author user
  */
 public class Problem3 extends Problem{
-        private Problem3 p;
+        private static Problem3 p;
     
     private Problem3(){
         String[][] answerboard= {
@@ -29,7 +29,7 @@ public class Problem3 extends Problem{
         setBoard(answerboard);
     }
     
-    public Problem3 getInstance(){
+    public static Problem3 getInstance(){
         if(p == null)
             p = new Problem3();
         
