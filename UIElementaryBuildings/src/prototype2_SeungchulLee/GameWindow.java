@@ -221,8 +221,18 @@ public class GameWindow extends javax.swing.JFrame {
         }
 
         jButton1.setText("0");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         jButton2.setText("1");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -230,6 +240,11 @@ public class GameWindow extends javax.swing.JFrame {
         });
 
         jButton3.setText("2");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -237,6 +252,11 @@ public class GameWindow extends javax.swing.JFrame {
         });
 
         jButton4.setText("3");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -244,14 +264,39 @@ public class GameWindow extends javax.swing.JFrame {
         });
 
         jButton5.setText("4");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
 
         jButton6.setText("5");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
 
         jButton7.setText("6");
+        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton7MouseClicked(evt);
+            }
+        });
 
         jButton8.setText("7");
+        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton8MouseClicked(evt);
+            }
+        });
 
         jButton9.setText("8");
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton9MouseClicked(evt);
+            }
+        });
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -575,6 +620,127 @@ public class GameWindow extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+          //0번버튼
+        if (evt.getButton()==1)//좌클릭 - 모듈에 모듈을 넣음
+        {
+            QueueManager.getInstance().enqueueContainerModule(0); 
+        }
+        if (evt.getButton()==3)//우클릭 = 현재 모듈로 채택후 uiqueue에 보이게함
+        {
+           QueueManager.changeCurModuleTo(0);
+           
+        }
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+          //1번버튼
+        if (evt.getButton()==1)//좌클릭 - 모듈에 모듈을 넣음
+        {
+            QueueManager.getInstance().enqueueContainerModule(1); 
+        }
+        if (evt.getButton()==3)//우클릭 = 현재 모듈로 채택후 uiqueue에 보이게함
+        {
+           QueueManager.changeCurModuleTo(1);
+           
+        }
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+          if (evt.getButton()==1)//좌클릭 - 모듈에 모듈을 넣음
+        {
+            QueueManager.getInstance().enqueueContainerModule(2); 
+        }
+        if (evt.getButton()==3)//우클릭 = 현재 모듈로 채택후 uiqueue에 보이게함
+        {
+           QueueManager.changeCurModuleTo(2);
+           
+        }
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        // TODO add your handling code here:
+         if (evt.getButton()==1)//좌클릭 - 모듈에 모듈을 넣음
+        {
+            QueueManager.getInstance().enqueueContainerModule(3); 
+        }
+        if (evt.getButton()==3)//우클릭 = 현재 모듈로 채택후 uiqueue에 보이게함
+        {
+              QueueManager.changeCurModuleTo(3);
+           
+        }
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+          if (evt.getButton()==1)//좌클릭 - 모듈에 모듈을 넣음
+        {
+            QueueManager.getInstance().enqueueContainerModule(4); 
+        }
+        if (evt.getButton()==3)//우클릭 = 현재 모듈로 채택후 uiqueue에 보이게함
+        {
+            QueueManager.changeCurModuleTo(4);
+           
+        }
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        // TODO add your handling code here:
+          if (evt.getButton()==1)//좌클릭 - 모듈에 모듈을 넣음
+        {
+            QueueManager.getInstance().enqueueContainerModule(5); 
+        }
+        if (evt.getButton()==3)//우클릭 = 현재 모듈로 채택후 uiqueue에 보이게함
+        {
+             QueueManager.changeCurModuleTo(5);
+           
+        }
+    }//GEN-LAST:event_jButton6MouseClicked
+
+    private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
+        // TODO add your handling code here:
+         if (evt.getButton()==1)//좌클릭 - 모듈에 모듈을 넣음
+        {
+            QueueManager.getInstance().enqueueContainerModule(6); 
+        }
+        if (evt.getButton()==3)//우클릭 = 현재 모듈로 채택후 uiqueue에 보이게함
+        {
+             QueueManager.changeCurModuleTo(6);
+           
+        }
+    }//GEN-LAST:event_jButton7MouseClicked
+
+    private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
+        // TODO add your handling code here:
+         if (evt.getButton()==1)//좌클릭 - 모듈에 모듈을 넣음
+        {
+            QueueManager.getInstance().enqueueContainerModule(7); 
+        }
+        if (evt.getButton()==3)//우클릭 = 현재 모듈로 채택후 uiqueue에 보이게함
+        {
+            QueueManager.changeCurModuleTo(7);
+           
+        }
+    }//GEN-LAST:event_jButton8MouseClicked
+
+    private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
+        // TODO add your handling code here:
+        
+        
+            if (evt.getButton()==1)//좌클릭 - 모듈에 모듈을 넣음
+        {
+            QueueManager.getInstance().enqueueContainerModule(8); 
+        }
+        if (evt.getButton()==3)//우클릭 = 현재 모듈로 채택후 uiqueue에 보이게함
+        {
+          QueueManager.changeCurModuleTo(8);
+           
+        }
+    }//GEN-LAST:event_jButton9MouseClicked
 
     /**
      * @param args the command line arguments
