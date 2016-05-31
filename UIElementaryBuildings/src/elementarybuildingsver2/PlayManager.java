@@ -10,13 +10,15 @@ package elementarybuildingsver2;
  * @author user
  */
 public class PlayManager {
-    
-    public static void play(){
-        if(DB.getInstance().getCurrentGameState() == Constants.GAME_STATE_RUN) return;
+
+    public static void play() {
+        if (DB.getInstance().getCurrentGameState() == Constants.GAME_STATE_RUN) {
+            return;
+        }
         DB.getInstance().setCurrentGameState(Constants.GAME_STATE_RUN);
-        new Thread(){
+        new Thread() {
             @Override
-            public void run(){
+            public void run() {
                 DB.getInstance().getCurrentContainerModule().execute();
             }
         }.start();

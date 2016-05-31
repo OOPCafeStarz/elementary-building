@@ -25,6 +25,7 @@ public class PrimitiveModuleInk extends PrimitiveModule{
     
     @Override
     public void execute(){
+        SoundManager.getInstance().playWaterdropSound();
         UserBoardManager.drop(getIcon());
     }
 }
