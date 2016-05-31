@@ -189,7 +189,7 @@ public class GameWindow extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "null", "null", "null", "null"
+                "1", "2", "3", "4", "5", "6", "7", "8"
             }
         ) {
             Class[] types = new Class [] {
@@ -232,7 +232,7 @@ public class GameWindow extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "null", "null", "null", "null"
+                "1", "2", "3", "4", "5", "6", "7", "8"
             }
         ) {
             Class[] types = new Class [] {
@@ -479,14 +479,14 @@ public class GameWindow extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "null", "null", "null", "null"
+                "1", "2", "3", "4", "5", "6", "7", "8"
             }
         ) {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, true
+                false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -616,10 +616,10 @@ public class GameWindow extends javax.swing.JFrame {
                                 .addComponent(jButton11)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton13)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton14)
+                                .addGap(14, 14, 14)
+                                .addComponent(jButton13)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jButton15)))
                         .addGap(17, 17, 17))
@@ -650,7 +650,12 @@ public class GameWindow extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel4)
@@ -676,23 +681,20 @@ public class GameWindow extends javax.swing.JFrame {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jButton9)
                                             .addComponent(jButton6)
-                                            .addComponent(jButton3))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton22)
-                                    .addComponent(jButton23)
-                                    .addComponent(jButton24))
-                                .addGap(16, 16, 16))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton35)
-                                .addContainerGap())
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE))))))
+                                            .addComponent(jButton3)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(148, 148, 148)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jButton23)
+                                                .addComponent(jButton22))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(jButton24)
+                                                    .addComponent(jButton35))
+                                                .addGap(2, 2, 2)))))
+                                .addGap(16, 32, Short.MAX_VALUE))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -721,9 +723,9 @@ public class GameWindow extends javax.swing.JFrame {
                             .addComponent(jButton10)
                             .addComponent(jButton11)
                             .addComponent(jButton12)
-                            .addComponent(jButton13)
                             .addComponent(jButton14)
-                            .addComponent(jButton15))
+                            .addComponent(jButton15)
+                            .addComponent(jButton13))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton16)
@@ -776,14 +778,15 @@ public class GameWindow extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
                                 .addComponent(jButton34)
-                                .addGap(58, 58, 58)
+                                .addGap(39, 39, 39)
                                 .addComponent(jButton22)
-                                .addGap(29, 29, 29)
+                                .addGap(18, 18, 18)
                                 .addComponent(jButton23)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton24)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton35)))))
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton35)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addGap(27, 27, 27))
         );
 
