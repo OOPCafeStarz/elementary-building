@@ -41,6 +41,8 @@ public class ContainerModule extends Module{
            
             queue[i].execute();
             
+            if(DB.getInstance().getCurrentGameState() == Constants.GAME_STATE_STOP) return;
+            
             Judge.doItJudge();
 
         }

@@ -761,7 +761,7 @@ public class GameWindow extends javax.swing.JFrame {
                                     .addComponent(jButton7)
                                     .addComponent(jButton8)
                                     .addComponent(jButton9))
-                                .addGap(32, 32, 32)
+                                .addGap(23, 23, 23)
                                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(8, 8, 8)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1033,7 +1033,8 @@ public class GameWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton32MouseClicked
 
     private void jButton33MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton33MouseClicked
-        // TODO add your handling code here:
+        // LOAD PROBLEM 9
+        AnswerBoardManager.load(8);
     }//GEN-LAST:event_jButton33MouseClicked
 
     /**
