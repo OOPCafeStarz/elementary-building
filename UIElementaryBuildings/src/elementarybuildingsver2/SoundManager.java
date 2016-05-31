@@ -41,7 +41,7 @@ public class SoundManager {
     }
     public void playDeleteSound()
     {
-        ds.playSound("z_delete");
+        ds.playSound("z_delete.wav");
     }
     public void playDirectionSound()
     {
@@ -49,7 +49,7 @@ public class SoundManager {
     }
     public void playWaterdropSound()
     {
-        wds.playSound("z_waterDrop");
+        wds.playSound("z_waterDrop.wav");
     }
   public static SoundManager getInstance() {
         if (musicman == null) {
