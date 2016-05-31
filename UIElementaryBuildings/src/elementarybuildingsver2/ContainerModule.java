@@ -50,6 +50,14 @@ public class ContainerModule extends Module{
         queueRear = 0;
     }
     
+     public void delete(){
+        if(queueRear <= 0)
+            // TODO: dealing with Overflow.
+            /* Overflow! */
+            return;
+        queueRear--;
+    }
+    
     public Module getModuleAt(int index){
         return queue[index];
     }

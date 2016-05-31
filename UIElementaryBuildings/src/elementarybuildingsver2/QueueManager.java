@@ -47,6 +47,14 @@ public class QueueManager {
         clearUIQueue();
     }
     
+    public static void deleteCurrentQueueTopElement() {
+        // current queue db change
+        DB.getInstance().deleteCurrentModuleQueueTopElement();
+        
+        // queue ui change
+        deleteUIQueue();
+    }
+    
     private static void showQueue(){
         clearUIQueue();
         
@@ -71,5 +79,14 @@ public class QueueManager {
         for(int i=0; i<Constants.QUEUE_SIZE; i++){
             GameWindow.getInstance().getQueue().setValueAt("",i, 0);
         }
+    }
+    
+    private static void deleteUIQueue() {
+      
+        DB db = DB.getInstance();
+        ContainerModule currentContainerModule = db.getCurrentContainerModule();
+        int queueSize = currentContainerModule.getQueueRear();
+        GameWindow.getInstance().getQueue().setValueAt("", Constants.QUEUE_SIZE - queueSize - 1, 0);
+        
     }
 }

@@ -93,6 +93,9 @@ public class DB {
         problems[2] = Problem3.getInstance();
         problems[3] = Problem4.getInstance();
         problems[4] = Problem5.getInstance();
+        problems[5] = Problem6.getInstance();
+        problems[6] = Problem7.getInstance();
+        problems[7] = Problem8.getInstance();
     }
     
     public static DB getInstance(){
@@ -126,6 +129,9 @@ public class DB {
         containerModules[currentContainerModuleIndex].enqueue(containerModules[index]);
     }
     
+    public void deleteCurrentModuleQueueTopElement() {
+        containerModules[currentContainerModuleIndex].delete();
+    }
     
     public void clearCurrentModule(){
         containerModules[currentContainerModuleIndex].clear();
