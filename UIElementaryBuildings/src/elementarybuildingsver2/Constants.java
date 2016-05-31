@@ -23,6 +23,7 @@ public class Constants {
     public static final int PM_BUTTON_MOVE_LEFT = 3;
     public static final int PM_BUTTON_MOVE_RIGHT = 4;
     public static final int PM_BUTTON_STAR = 5;
+    public static final int PM_BUTTON_INK = 6;
     
     public static final int GAME_STATE_RUN = 0;
     public static final int GAME_STATE_STOP = 1;
@@ -41,5 +42,8 @@ public class Constants {
     public static final String ICON_BLACK_HEART = "♥";
 
     
-    public static final int NUM_SELECT_PROBLEM_BUTTON = 5;
+    public static final int NUM_SELECT_PROBLEM_BUTTON = 20;
+    
+    
+    public static final int DELAY_TIME_DROP_ITEM = 100;
 }

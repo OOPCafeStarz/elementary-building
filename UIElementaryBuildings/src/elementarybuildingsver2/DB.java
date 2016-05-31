@@ -85,15 +85,14 @@ public class DB {
         primitiveModules[Constants.PM_BUTTON_MOVE_LEFT] = PrimitiveModuleMoveLeft.getInstance();
         primitiveModules[Constants.PM_BUTTON_MOVE_RIGHT] = PrimitiveModuleMoveRight.getInstance();
         primitiveModules[Constants.PM_BUTTON_STAR] = PrimitiveModuleStar.getInstance();
+        primitiveModules[Constants.PM_BUTTON_INK] = PrimitiveModuleInk.getInstance();
         
         // problems int
         problems[0] = Problem1.getInstance();
         problems[1] = Problem2.getInstance();
         problems[2] = Problem3.getInstance();
         problems[3] = Problem4.getInstance();
-        
-        // answer board init
-        //AnswerBoardManager.load(0);
+        problems[4] = Problem5.getInstance();
     }
     
     public static DB getInstance(){
