@@ -15,9 +15,25 @@ public class Judge {
 
     public static void doItJudge() {
         boolean accepted = true;
-
+        boolean isEmpty = true;
         String[][] userBoard = DB.getInstance().getUserBoard();
         String[][] answerBoard = DB.getInstance().getAnswerBoard();
+
+        for (int i = 0; i < Constants.BOARD_ROW; i++) {
+            for (int j = 0; j < Constants.BOARD_COL; j++) {
+                if (!answerBoard[i][j].equals("")) {
+                    isEmpty = false;
+                    break;
+                }
+            }
+        }
+
+        if (isEmpty) {
+            GameWindow.getInstance().getJudgeText().setText("Select the problem first !");
+            JOptionPane.showMessageDialog(null, "Select the problem first !", "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
+            DB.getInstance().setCurrentGameState(Constants.GAME_STATE_STOP);
+            return;
+        }
 
         for (int i = 0; i < Constants.BOARD_ROW; i++) {
             for (int j = 0; j < Constants.BOARD_COL; j++) {
@@ -28,10 +44,10 @@ public class Judge {
             }
         }
         //aceepted
-        SoundManager.getInstance().playSuccessSound(); 
+        SoundManager.getInstance().playSuccessSound();
         JOptionPane.showMessageDialog(null, "Accepted!", "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
         GameWindow.getInstance().getJudgeText().setText("Accepted");
-       
+
         DB.getInstance().setCurrentGameState(Constants.GAME_STATE_STOP);
     }
 }

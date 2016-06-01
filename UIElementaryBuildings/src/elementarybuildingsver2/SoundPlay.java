@@ -16,8 +16,8 @@ import javax.sound.sampled.*;
  * @author will9102002
  */
 public class SoundPlay {
-    
-  public  void playSound(String filename){
+
+    public void playSound(String filename) {
 
         try {
 
@@ -25,26 +25,18 @@ public class SoundPlay {
 
             File file = new File(url.getPath());
 
-
-
-
             final Clip clip = AudioSystem.getClip();
 
-            clip.addLineListener(new LineListener()
-
-            {
+            clip.addLineListener(new LineListener() {
 
                 @Override
 
-                public void update(LineEvent event)
-
-                {
+                public void update(LineEvent event) {
 
                     //CLOSE, OPEN, START, STOP
-
-                    if (event.getType() == LineEvent.Type.STOP)
-
+                    if (event.getType() == LineEvent.Type.STOP) {
                         clip.close();
+                    }
 
                 }
 
@@ -54,20 +46,12 @@ public class SoundPlay {
 
             clip.start();
 
-        }
-
-        catch (Exception e) {
+        } catch (Exception e) {
 
             e.printStackTrace();
 
         }
 
     }
-  
-  
- }
 
-
-
-    
-
+}
