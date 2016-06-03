@@ -97,6 +97,7 @@ public class DB {
         problems[6] = Problem7.getInstance();
         problems[7] = Problem8.getInstance();
         problems[8] = Problem9.getInstance();
+        problems[9] = Problem10.getInstance();
     }
     
     public static DB getInstance(){

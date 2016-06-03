@@ -654,6 +654,9 @@ public class GameWindow extends javax.swing.JFrame {
         jButton34.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton34.setText("problem10");
         jButton34.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton34MouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jButton34MousePressed(evt);
             }
@@ -1328,6 +1331,10 @@ public class GameWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
         SoundManager.getInstance().playStage();
     }//GEN-LAST:event_jButton34MousePressed
+
+    private void jButton34MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton34MouseClicked
+        AnswerBoardManager.load(9);        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton34MouseClicked
 
     /**
      * @param args the command line arguments
