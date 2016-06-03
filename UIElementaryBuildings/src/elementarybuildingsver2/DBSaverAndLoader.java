@@ -58,9 +58,9 @@ public class DBSaverAndLoader {
                 Object o = is.readObject();
 
                 if (o instanceof DB) {
-                    DB.getInstance().setContainerModules(((DB) o).getContainerModules());
-                    DB.getInstance().setCurrentContainerModuleIndex(((DB) o).getCurrentContainerModuleIndex());
-                    System.out.println("damn");
+                    //DB.getInstance().setContainerModules(((DB) o).getContainerModules());
+                    //DB.getInstance().setCurrentContainerModuleIndex(((DB) o).getCurrentContainerModuleIndex());
+                    DB.setDB((DB)o);
                 } else {
                     JOptionPane.showMessageDialog(GameWindow.getInstance(),
                             "Wrong class type!",
@@ -86,5 +86,7 @@ public class DBSaverAndLoader {
             System.out.println();
         }
             QueueManager.showQueue();
+            AnswerBoardManager.show();
+            StopManager.getInstance().stop();
     }
 }

@@ -53,7 +53,9 @@ public class DB implements Serializable{
     public void setAnswerBoard(String[][] answerBoard) {
         this.answerBoard = answerBoard;
     }
-    
+    public static void setDB(DB input){
+        DB.db=input;
+    }
     public ContainerModule[] getContainerModules() {
         return containerModules;
     }
