@@ -5,12 +5,14 @@
  */
 package elementarybuildingsver2;
 
+import java.io.Serializable;
+
 
 /**
  *
  * @author user
  */
-public class DB {
+public class DB implements Serializable{
     private static DB db;
     private ContainerModule[] containerModules = new ContainerModule[Constants.NUM_CONTAINER_MODULE_BUTTON];
     private PrimitiveModule[] primitiveModules = new PrimitiveModule[Constants.NUM_PRIMITIVE_MODULE_BUTTON];
@@ -48,9 +50,24 @@ public class DB {
     public String[][] getAnswerBoard() {
         return answerBoard;
     }
-
     public void setAnswerBoard(String[][] answerBoard) {
         this.answerBoard = answerBoard;
+    }
+    
+    public ContainerModule[] getContainerModules() {
+        return containerModules;
+    }
+
+    public void setContainerModules(ContainerModule[] containerModules) {
+        this.containerModules = containerModules;
+    }
+
+    public int getCurrentContainerModuleIndex() {
+        return currentContainerModuleIndex;
+    }
+
+    public void setCurrentContainerModuleIndex(int currentContainerModuleIndex) {
+        this.currentContainerModuleIndex = currentContainerModuleIndex;
     }
     
     private DB(){

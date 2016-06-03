@@ -5,13 +5,15 @@
  */
 package elementarybuildingsver2;
 
+import java.io.Serializable;
+
 
 /**
  *
  * @author user
  */
 
-public class PrimitiveModule extends Module{
+public class PrimitiveModule extends Module implements Serializable{
     
     @Override
     public void execute(){

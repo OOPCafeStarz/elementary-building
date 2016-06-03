@@ -5,11 +5,13 @@
  */
 package elementarybuildingsver2;
 
+import java.io.Serializable;
+
 /**
  *
  * @author user
  */
-public abstract class Module {
+public abstract class Module implements Serializable{
 
     private String icon;
 

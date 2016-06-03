@@ -55,7 +55,7 @@ public class QueueManager {
         deleteUIQueue();
     }
     
-    private static void showQueue(){
+    public static void showQueue(){
         clearUIQueue();
         
         GameWindow gw = GameWindow.getInstance();

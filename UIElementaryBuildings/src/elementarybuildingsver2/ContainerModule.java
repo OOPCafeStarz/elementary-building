@@ -5,12 +5,14 @@
  */
 package elementarybuildingsver2;
 
+import java.io.Serializable;
+
 
 /**
  *
  * @author user
  */
-public class ContainerModule extends Module{
+public class ContainerModule extends Module implements Serializable{
     private Module[] queue = new Module[Constants.QUEUE_SIZE];
     private int queueRear = 0; // points next position of the last element
     

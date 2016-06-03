@@ -5,11 +5,13 @@
  */
 package elementarybuildingsver2;
 
+import java.io.Serializable;
+
 /**
  *
  * @author user
  */
-public abstract class Problem {
+public abstract class Problem implements Serializable{
     private String[][] board;
 
     public String[][] getBoard() {
