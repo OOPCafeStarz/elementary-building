@@ -22,7 +22,7 @@ public class SoundManager {
    SoundPlay ds = new SoundPlay();
    SoundPlay dirs = new SoundPlay();
    SoundPlay wds = new SoundPlay();
-   
+   SoundPlay stgs= new SoundPlay();
     public void playButtonSound()
     {
         bs.playSound("z_Button.wav");
@@ -51,6 +51,11 @@ public class SoundManager {
     {
         wds.playSound("z_waterDrop.wav");
     }
+    public void playStage()
+    {
+        stgs.playSound("z_stage.wav");
+    }
+    
   public static SoundManager getInstance() {
         if (musicman == null) {
             musicman = new SoundManager();

@@ -551,6 +551,9 @@ public class GameWindow extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton25MouseClicked(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton25MousePressed(evt);
+            }
         });
         jButton25.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -564,6 +567,9 @@ public class GameWindow extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton26MouseClicked(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton26MousePressed(evt);
+            }
         });
 
         jButton27.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
@@ -571,6 +577,9 @@ public class GameWindow extends javax.swing.JFrame {
         jButton27.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton27MouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton27MousePressed(evt);
             }
         });
 
@@ -580,6 +589,9 @@ public class GameWindow extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton28MouseClicked(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton28MousePressed(evt);
+            }
         });
 
         jButton29.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
@@ -587,6 +599,9 @@ public class GameWindow extends javax.swing.JFrame {
         jButton29.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton29MouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton29MousePressed(evt);
             }
         });
 
@@ -598,6 +613,9 @@ public class GameWindow extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton30MouseClicked(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton30MousePressed(evt);
+            }
         });
 
         jButton31.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
@@ -605,6 +623,9 @@ public class GameWindow extends javax.swing.JFrame {
         jButton31.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton31MouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton31MousePressed(evt);
             }
         });
 
@@ -614,6 +635,9 @@ public class GameWindow extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton32MouseClicked(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton32MousePressed(evt);
+            }
         });
 
         jButton33.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
@@ -622,10 +646,18 @@ public class GameWindow extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton33MouseClicked(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton33MousePressed(evt);
+            }
         });
 
         jButton34.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jButton34.setText("problem10");
+        jButton34.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton34MousePressed(evt);
+            }
+        });
 
         jButton35.setText("delete");
         jButton35.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1245,6 +1277,57 @@ public class GameWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
          SoundManager.getInstance().playDirectionSound();
     }//GEN-LAST:event_jButton13MousePressed
+
+    private void jButton25MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton25MousePressed
+        // TODO add your handling code here:
+        
+        SoundManager.getInstance().playStage();
+    }//GEN-LAST:event_jButton25MousePressed
+
+    private void jButton26MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton26MousePressed
+        // TODO add your handling code here:
+        SoundManager.getInstance().playStage();
+    }//GEN-LAST:event_jButton26MousePressed
+
+    private void jButton27MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton27MousePressed
+        // TODO add your handling code here:
+        SoundManager.getInstance().playStage();
+    }//GEN-LAST:event_jButton27MousePressed
+
+    private void jButton28MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton28MousePressed
+        // TODO add your handling code here:
+        SoundManager.getInstance().playStage();
+    }//GEN-LAST:event_jButton28MousePressed
+
+    private void jButton29MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton29MousePressed
+        // TODO add your handling code here:
+        SoundManager.getInstance().playStage();
+    }//GEN-LAST:event_jButton29MousePressed
+
+    private void jButton30MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton30MousePressed
+        // TODO add your handling code here:
+        SoundManager.getInstance().playStage();
+    }//GEN-LAST:event_jButton30MousePressed
+
+    private void jButton31MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton31MousePressed
+        // TODO add your handling code here:
+        SoundManager.getInstance().playStage();
+    }//GEN-LAST:event_jButton31MousePressed
+
+    private void jButton32MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton32MousePressed
+        // TODO add your handling code here:
+        SoundManager.getInstance().playStage();
+    }//GEN-LAST:event_jButton32MousePressed
+
+    private void jButton33MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton33MousePressed
+        // TODO add your handling code here:
+        SoundManager.getInstance().playStage();
+    }//GEN-LAST:event_jButton33MousePressed
+
+    private void jButton34MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton34MousePressed
+        // TODO add your handling code here:
+        SoundManager.getInstance().playStage();
+    }//GEN-LAST:event_jButton34MousePressed
 
     /**
      * @param args the command line arguments
