@@ -9,33 +9,32 @@ package elementarybuildingsver2;
  *
  * @author user
  */
-public class Problem2 extends Problem{
+public class Problem2 extends Problem {
+
     private static Problem2 p;
-      private Problem2(){
-        
-        
-        String [][] ans2 = {
-        
-        {"","●","●","","","●","●",""},
-        {"","■","■","","","★","★",""},
-        {"","□","□","","","□","□",""},
-        {"","□","□","","","□","□",""},
-        {"","□","□","","","□","□",""},
-        {"","□","□","","","□","□",""},
-        {"▲","□","□","▲","▲","□","□","▲"},
-        {"△","■","■","△","△","■","■","△"}
-    };
-   
-    
-        
+
+    private Problem2() {
+
+        String[][] ans2 = {
+            {"", "", "", "", "", "", "", ""},
+            {"", "", "", "", "", "", "", ""},
+            {"", "", "", "", "", "", "", ""},
+            {"", "", "", "", "", "", "", ""},
+            {"", "", "", "", "", "", "", ""},
+            {"■", "■", "■", "", "", "", "", ""},
+            {"□", "□", "□", "", "", "", "", ""},
+            {"□", "□", "□", "", "", "", "", ""}
+        };
+
         setBoard(ans2);
     }
-    
-    
-     public static  Problem2 getInstance(){
-        if(p == null)
+
+    public static Problem2 getInstance() {
+        if (p == null) {
             p = new Problem2();
-        
+        }
+
         return p;
     }
+
 }

@@ -9,30 +9,32 @@ package elementarybuildingsver2;
  *
  * @author user
  */
-public class Problem3 extends Problem{
-        private static Problem3 p;
-    
-    private Problem3(){
-        String[][] answerboard= {
-            {"","","","","","","",""},
-            {"","","","","","","",""},
-            {"","","","★","","","",""},
-            {"△","","","☆","","","△",""},
-            {"■","","","■","","","■",""},
-            {"□","○","○","□","○","○","□",""},
-            {"■","■","■","■","■","■","■",""},
-            {"□","□","□","□","□","□","□",""}
+public class Problem3 extends Problem {
+
+    private static Problem3 p;
+
+    private Problem3() {
+
+        String[][] ans3 = {
+            {"", "", "", "", "", "", "", ""},
+            {"", "", "", "", "", "", "", ""},
+            {"", "", "", "", "", "", "", ""},
+            {"", "", "", "", "", "", "", ""},
+            {"■", "▲", "●", "★", "", "", "", ""},
+            {"□", "△", "○", "☆", "", "", "", ""},
+            {"□", "△", "○", "☆", "", "", "", ""},
+            {"□", "△", "○", "☆", "", "", "", ""}
         };
-        
-        //make board
-        
-        setBoard(answerboard);
+
+        setBoard(ans3);
     }
-    
-    public static Problem3 getInstance(){
-        if(p == null)
+
+    public static Problem3 getInstance() {
+        if (p == null) {
             p = new Problem3();
-        
+        }
+
         return p;
     }
+
 }
